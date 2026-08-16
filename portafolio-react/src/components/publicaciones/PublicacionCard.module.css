@@ -1,0 +1,102 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: .6rem;
+}
+
+.thumb {
+  width: 100%;
+  aspect-ratio: 4/5;
+  border-radius: 4px;
+  background: var(--sand);
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  transition: transform .3s, box-shadow .3s;
+  color: var(--rose);
+}
+
+.thumb:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 40px rgba(74,61,51,.12);
+}
+
+.thumbMedia {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.thumb::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(58,46,40,0) 55%, rgba(58,46,40,.45) 100%);
+}
+
+.countBadge {
+  position: absolute;
+  top: .6rem;
+  right: .6rem;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  gap: .3rem;
+  background: rgba(58,46,40,.6);
+  color: #fff;
+  font-size: .68rem;
+  font-weight: 600;
+  padding: .25rem .5rem;
+  border-radius: 12px;
+}
+
+.playIcon {
+  position: relative;
+  z-index: 1;
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  border: 1.5px solid rgba(255,255,255,.7);
+  background: rgba(58,46,40,.35);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.meta {
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+}
+
+.num {
+  font-size: .68rem;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--brown);
+  opacity: .6;
+}
+
+.interactions {
+  display: flex;
+  gap: 1rem;
+}
+
+.interaction {
+  display: flex;
+  align-items: center;
+  gap: .3rem;
+  font-size: .72rem;
+  font-weight: 500;
+  color: var(--brown);
+  opacity: .75;
+}
+
+.interaction svg { color: var(--rose); flex-shrink: 0; }
