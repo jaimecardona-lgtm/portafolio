@@ -1,0 +1,69 @@
+.page {
+  animation: fadeInUp 0.6s ease-out;
+}
+
+.page h1 {
+  font-size: 2.5rem;
+  color: var(--color-neon-green);
+  margin-bottom: var(--spacing-lg);
+  text-shadow: 0 0 10px var(--color-neon-green);
+}
+
+.page > p {
+  font-size: var(--font-size-lg);
+  color: var(--color-text-dim);
+  margin-bottom: var(--spacing-xl);
+}
+
+.project-grid, .timeline, .research-list, .blog-posts {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: var(--spacing-lg);
+  margin-top: var(--spacing-xl);
+}
+
+.project-card, .timeline-item, .research-item, .blog-post {
+  padding: var(--spacing-lg);
+  background: linear-gradient(135deg, rgba(26, 77, 46, 0.2) 0%, rgba(0, 212, 255, 0.1) 100%);
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.project-card:hover, .timeline-item:hover, .research-item:hover, .blog-post:hover {
+  border-color: var(--color-electric-blue);
+  box-shadow: 0 0 20px rgba(0, 212, 255, 0.2);
+  transform: translateY(-5px);
+}
+
+.project-card h3, .timeline-item h3, .research-item h3, .blog-post h3 {
+  color: var(--color-harvest-amber);
+  margin-bottom: var(--spacing-sm);
+  font-size: var(--font-size-lg);
+}
+
+.project-card p, .timeline-item p, .research-item p, .blog-post p {
+  color: var(--color-text-dim);
+  line-height: 1.6;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 768px) {
+  .page h1 {
+    font-size: 1.8rem;
+  }
+
+  .project-grid, .timeline, .research-list, .blog-posts {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,66 @@
+research:
+  - title: "Precision Agriculture with AI: A Deep Dive into ML Applications"
+    date: "2024"
+    status: Published
+    abstract: |
+      Exploring machine learning applications in modern farming, from crop yield prediction
+      to pest management. This research examines how AI can optimize agricultural outcomes
+      while promoting sustainability.
+    tags:
+      - Machine Learning
+      - Agriculture
+      - AI/ML
+      - Sustainability
+    link: "#research"
+
+  - title: "Conversational AI for Agricultural Consulting"
+    date: "2024"
+    status: In Progress
+    abstract: |
+      Investigating the effectiveness of large language models for providing agricultural
+      consulting services. Includes case studies on JAC-IA deployment in real farming scenarios.
+    tags:
+      - LLM
+      - NLP
+      - Agriculture
+      - Human-AI Interaction
+    link: "#research"
+
+  - title: "RAG Systems for Specialized Knowledge Domains"
+    date: "2024"
+    status: In Progress
+    abstract: |
+      Building and evaluating Retrieval-Augmented Generation systems for domain-specific
+      knowledge retrieval, with applications in agricultural intelligence.
+    tags:
+      - RAG
+      - Knowledge Management
+      - Information Retrieval
+      - LLM
+    link: "#research"
+
+  - title: "Sustainable Tech Stack for Farm Management Systems"
+    date: "2023"
+    status: Published
+    abstract: |
+      Analysis of modern development frameworks and their application to building
+      sustainable, scalable farm management systems.
+    tags:
+      - Software Architecture
+      - Full-Stack Development
+      - Agriculture
+      - Scalability
+    link: "#research"
+
+  - title: "Data Privacy in Agricultural Intelligence Systems"
+    date: "2023"
+    status: In Progress
+    abstract: |
+      Examining privacy-preserving approaches for agricultural data collection and AI
+      analysis, with focus on farmer data rights and ethical AI practices.
+    tags:
+      - Privacy
+      - Ethics
+      - Data Protection
+      - Agriculture
+    link: "#research"

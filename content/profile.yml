@@ -1,0 +1,43 @@
+name: Jaime Cardona
+title: Software Engineer & Agrotech Innovator
+email: jaime.cardona@rckt.es
+phone: "+34 XXX XXX XXX"
+
+bio: |
+  Software engineer with a passion for building intelligent systems that bridge
+  technology and agriculture. Experienced in full-stack development, AI/ML, and
+  agrotech solutions. Creator and maintainer of JAC-IA, an AI assistant tailored
+  for agricultural applications.
+
+social:
+  - platform: github
+    url: https://github.com/ja23cardona1406
+  - platform: linkedin
+    url: https://linkedin.com/in/jaime-cardona
+  - platform: twitter
+    url: https://twitter.com/jaime_cardona
+
+skills:
+  backend:
+    - Python
+    - FastAPI
+    - Node.js
+    - PostgreSQL
+  frontend:
+    - React
+    - TypeScript
+    - CSS3/Sass
+    - Vite
+  ai_ml:
+    - LangChain
+    - OpenRouter
+    - RAG Systems
+    - pgvector
+  devops:
+    - Docker
+    - Render
+    - GitHub Actions
+    - AWS
+
+location: Spain
+timezone: Europe/Madrid

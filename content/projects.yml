@@ -1,0 +1,121 @@
+projects:
+  - id: agropilot-cm
+    name: Agropilot CM
+    tagline: Comprehensive Farm Management System
+    description: |
+      A precision agriculture platform designed to help farmers manage crop cycles,
+      optimize resource usage, and maximize yields through data-driven insights.
+    technologies:
+      - React
+      - FastAPI
+      - PostgreSQL
+      - ML/Analytics
+    role: Lead Developer
+    status: Production
+    featured: true
+    link: "#projects"
+
+  - id: elite-beauty
+    name: Elite Beauty
+    tagline: E-commerce Platform
+    description: |
+      Full-stack e-commerce solution for beauty products with advanced
+      inventory management and customer analytics.
+    technologies:
+      - React
+      - Node.js
+      - MongoDB
+      - Stripe
+    role: Developer
+    status: Production
+    featured: false
+
+  - id: intermuni-connect
+    name: InterMuniConnect
+    tagline: Municipal Collaboration Network
+    description: |
+      Platform enabling inter-municipal communication and resource sharing
+      for local government efficiency.
+    technologies:
+      - React
+      - FastAPI
+      - PostgreSQL
+    role: Full-Stack Developer
+    status: Active
+    featured: false
+
+  - id: factura-ops
+    name: FacturaOps
+    tagline: Invoice & Billing Management
+    description: |
+      Automated invoice generation, tracking, and management system for SMBs
+      with real-time reporting.
+    technologies:
+      - FastAPI
+      - React
+      - PostgreSQL
+      - ReportLab
+    role: Developer
+    status: Production
+    featured: false
+
+  - id: oppy-hound
+    name: OppyHound
+    tagline: Opportunity Discovery Engine
+    description: |
+      AI-powered platform for identifying business opportunities and market gaps
+      using advanced analytics.
+    technologies:
+      - Python
+      - ML/NLP
+      - PostgreSQL
+      - FastAPI
+    role: Lead Developer
+    status: Active
+    featured: false
+
+  - id: alignerr
+    name: Alignerr
+    tagline: Dental Alignment Tracking
+    description: |
+      Smart application for tracking orthodontic treatment progress with
+      AI-powered alignment analysis.
+    technologies:
+      - React
+      - FastAPI
+      - Computer Vision
+      - PostgreSQL
+    role: Developer
+    status: Beta
+    featured: false
+
+  - id: bertolli-pro
+    name: Bertolli Pro 900
+    tagline: Advanced Food Processing System
+    description: |
+      Enterprise system for food processing optimization with quality control
+      and production scheduling.
+    technologies:
+      - React
+      - FastAPI
+      - IoT Integration
+      - Real-time Analytics
+    role: Developer
+    status: Production
+    featured: false
+
+  - id: jac-ia
+    name: JAC-IA Assistant
+    tagline: Agricultural AI Assistant
+    description: |
+      Conversational AI assistant specialized in agricultural consulting,
+      crop management, and sustainable farming practices.
+    technologies:
+      - LLM/RAG
+      - FastAPI
+      - OpenRouter
+      - pgvector
+    role: Creator & Maintainer
+    status: Active
+    featured: true
+    link: "#"

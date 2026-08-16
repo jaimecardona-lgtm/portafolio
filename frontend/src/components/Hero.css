@@ -1,0 +1,134 @@
+.hero {
+  min-height: 70vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  background: radial-gradient(ellipse at center, rgba(57, 255, 20, 0.05) 0%, transparent 70%);
+}
+
+.hero-content {
+  text-align: center;
+  z-index: 10;
+  animation: fadeInUp 0.8s ease-out;
+}
+
+.hero-title {
+  font-size: 4rem;
+  font-weight: bold;
+  letter-spacing: 3px;
+  color: var(--color-neon-green);
+  text-shadow: 0 0 20px var(--color-neon-green), 0 0 40px rgba(57, 255, 20, 0.5);
+  margin-bottom: var(--spacing-lg);
+  font-family: 'Courier New', monospace;
+}
+
+.hero-subtitle {
+  font-size: var(--font-size-lg);
+  color: var(--color-electric-blue);
+  margin-bottom: var(--spacing-xl);
+  text-shadow: 0 0 10px var(--color-electric-blue);
+}
+
+.hero-cta {
+  display: flex;
+  gap: var(--spacing-lg);
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.cta-primary, .cta-secondary {
+  padding: var(--spacing-md) var(--spacing-xl);
+  font-size: var(--font-size-base);
+  border: 2px solid;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.cta-primary {
+  background-color: var(--color-neon-green);
+  color: var(--color-dark-earth);
+  border-color: var(--color-neon-green);
+}
+
+.cta-primary:hover {
+  background-color: transparent;
+  color: var(--color-neon-green);
+  box-shadow: 0 0 15px var(--color-neon-green);
+}
+
+.cta-secondary {
+  background-color: transparent;
+  color: var(--color-electric-blue);
+  border-color: var(--color-electric-blue);
+}
+
+.cta-secondary:hover {
+  background-color: var(--color-electric-blue);
+  color: var(--color-dark-earth);
+  box-shadow: 0 0 15px var(--color-electric-blue);
+}
+
+.hero-scanner {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 300px;
+  height: 100%;
+  opacity: 0.1;
+  pointer-events: none;
+}
+
+.scanner-line {
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--color-neon-green), transparent);
+  position: absolute;
+  top: 50%;
+  animation: scan 3s infinite;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scan {
+  0% {
+    top: 0;
+  }
+  50% {
+    top: 50%;
+  }
+  100% {
+    top: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-title {
+    font-size: 2.5rem;
+  }
+
+  .hero-subtitle {
+    font-size: var(--font-size-base);
+  }
+
+  .hero-cta {
+    flex-direction: column;
+  }
+
+  .cta-primary, .cta-secondary {
+    width: 100%;
+  }
+}
