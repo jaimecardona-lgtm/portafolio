@@ -1,0 +1,88 @@
+publications:
+  - id: hybrid-ai-architecture
+    title: Hybrid AI Architecture for Agricultural Diversification- Deep Learning and Expert Systems Integration in the AgroDiversity Platform
+    authors:
+      - Jaime Andrés Cardona Montero
+      - Additional authors
+    conference: IEEE CONCAPAN XLIII 2025
+    location: San Salvador, El Salvador
+    date: "2025"
+    doi: "10.1109/CONCAPAN66820.2025.11512437"
+    publication_year: 2025
+    status: Published
+    indexed: IEEE Xplore
+
+    abstract: |
+      Exploración de arquitecturas híbridas que integran aprendizaje profundo con
+      sistemas expertos para diversificación agrícola, usando la plataforma AgroDiversity
+      como caso de uso.
+
+    key_topics:
+      - Deep Learning
+      - Expert Systems
+      - Agricultural AI
+      - Hybrid Architectures
+      - Agricultural Diversification
+      - Machine Learning Applications
+
+    connection_to_work: |
+      Directamente relacionado con Agropilot CM y el módulo de sistemas silvopastorales.
+      Demuestra capacidad de investigación aplicada y publicación en conferencias indexadas.
+
+    link_doi: https://doi.org/10.1109/CONCAPAN66820.2025.11512437
+
+  - id: environmental-dimensions-ai
+    title: The Environmental Dimensions of Artificial Intelligence- A Multifaceted Challenge
+    authors:
+      - Jaime Andrés Cardona Montero
+      - Additional authors
+    conference: IEEE CONCAPAN XLIII 2025
+    location: San Salvador, El Salvador
+    date: "2025"
+    doi: "10.1109/CONCAPAN66820.2025.11512472"
+    publication_year: 2025
+    status: Published
+    indexed: IEEE Xplore
+
+    abstract: |
+      Análisis multidimensional de los impactos ambientales de la inteligencia artificial,
+      considerando consumo energético, emisiones de carbono, residuos electrónicos y
+      sostenibilidad en sistemas de IA a escala.
+
+    key_topics:
+      - Environmental Impact
+      - AI Sustainability
+      - Carbon Footprint
+      - Green AI
+      - Responsible AI
+      - Environmental Ethics
+
+    connection_to_work: |
+      Reflexión sobre sostenibilidad e impacto ambiental de la IA, relevante a la
+      construcción responsable de sistemas inteligentes.
+
+    link_doi: https://doi.org/10.1109/CONCAPAN66820.2025.11512472
+
+research_interests:
+  - Agricultural Intelligence & Automation
+  - Sustainable AI
+  - Hybrid AI Systems
+  - Data Engineering at Scale
+  - Responsible AI & Ethics
+  - Full-Stack Intelligence
+  - RAG & Knowledge Systems
+  - Product-Oriented Research
+
+academic_contributions:
+  - IEEE CONCAPAN 2025 publications
+  - University of San Buenaventura Cali research projects
+  - Open source contributions
+  - Technical documentation and guides
+
+future_research_directions:
+  - Computer Vision for Agricultural Monitoring
+  - Predictive Models for Livestock Management
+  - Environmental Impact Measurement
+  - Federated Learning in Agriculture
+  - Edge AI for Rural Applications
+  - Responsible AI Frameworks

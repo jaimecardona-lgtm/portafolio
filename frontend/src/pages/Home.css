@@ -1,3 +1,230 @@
 .home {
   width: 100%;
 }
+
+/* Story Preview Section */
+.story-preview {
+  padding: 6rem 0;
+  background: linear-gradient(180deg, rgba(26, 77, 46, 0.1) 0%, rgba(0, 212, 255, 0.05) 100%);
+  border-top: 2px solid rgba(57, 255, 20, 0.2);
+  border-bottom: 2px solid rgba(0, 212, 255, 0.2);
+}
+
+.story-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.story-card {
+  padding: 2rem;
+  background: rgba(10, 14, 39, 0.5);
+  border: 2px solid rgba(57, 255, 20, 0.2);
+  border-radius: 8px;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.story-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, #39ff14 0%, #00d4ff 100%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.story-card:hover {
+  border-color: #39ff14;
+  box-shadow: 0 0 20px rgba(57, 255, 20, 0.2), inset 0 0 10px rgba(57, 255, 20, 0.05);
+  transform: translateY(-4px);
+}
+
+.story-card:hover::before {
+  opacity: 1;
+}
+
+.card-number {
+  display: block;
+  font-size: 3rem;
+  font-weight: bold;
+  color: rgba(57, 255, 20, 0.3);
+  line-height: 1;
+  margin-bottom: 1rem;
+  font-family: 'Courier New', monospace;
+}
+
+.story-card h3 {
+  font-size: 1.3rem;
+  color: #39ff14;
+  margin: 0 0 1rem 0;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+.story-card p {
+  color: #b0b0b0;
+  line-height: 1.6;
+  margin: 0 0 1.5rem 0;
+  font-size: 0.95rem;
+  text-align: left;
+}
+
+.card-label {
+  display: inline-block;
+  padding: 0.4rem 0.8rem;
+  background: rgba(57, 255, 20, 0.1);
+  color: #00d4ff;
+  border: 1px solid rgba(0, 212, 255, 0.3);
+  border-radius: 4px;
+  font-size: 0.8rem;
+  font-weight: bold;
+}
+
+/* Quick Facts */
+.quick-facts {
+  padding: 6rem 0;
+  background: rgba(26, 77, 46, 0.05);
+}
+
+.facts-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.fact {
+  text-align: center;
+  padding: 2rem;
+  border: 2px solid rgba(57, 255, 20, 0.2);
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.fact:hover {
+  border-color: #00d4ff;
+  box-shadow: 0 0 20px rgba(0, 212, 255, 0.15);
+}
+
+.fact-value {
+  display: block;
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #39ff14;
+  margin-bottom: 0.5rem;
+  font-family: 'Courier New', monospace;
+}
+
+.fact-label {
+  display: block;
+  font-size: 0.95rem;
+  color: #b0b0b0;
+}
+
+/* CTA Section */
+.cta-section {
+  padding: 6rem 0;
+  background: linear-gradient(135deg, rgba(57, 255, 20, 0.05) 0%, rgba(0, 212, 255, 0.05) 100%);
+  border-top: 2px solid rgba(57, 255, 20, 0.3);
+}
+
+.cta-card {
+  background: rgba(10, 14, 39, 0.7);
+  border: 2px solid #39ff14;
+  border-radius: 12px;
+  padding: 3rem;
+  text-align: center;
+  box-shadow: 0 0 30px rgba(57, 255, 20, 0.1);
+}
+
+.cta-card h3 {
+  font-size: 2rem;
+  color: #39ff14;
+  margin: 0 0 1rem 0;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+.cta-card p {
+  color: #d0d0d0;
+  font-size: 1.1rem;
+  margin: 0 0 2rem 0;
+  line-height: 1.6;
+}
+
+.cta-buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.cta-btn {
+  padding: 1rem 2rem;
+  border: 2px solid;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: 'Outfit', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.cta-btn.primary {
+  background: linear-gradient(135deg, #39ff14 0%, #00d4ff 100%);
+  color: #0a0e27;
+  border-color: #39ff14;
+}
+
+.cta-btn.primary:hover {
+  box-shadow: 0 0 20px rgba(57, 255, 20, 0.4);
+  transform: scale(1.05);
+}
+
+.cta-btn.secondary {
+  background: transparent;
+  color: #39ff14;
+  border-color: #39ff14;
+}
+
+.cta-btn.secondary:hover {
+  background: rgba(57, 255, 20, 0.1);
+  box-shadow: 0 0 20px rgba(57, 255, 20, 0.2);
+}
+
+@media (max-width: 768px) {
+  .story-preview,
+  .quick-facts,
+  .cta-section {
+    padding: 3rem 0;
+  }
+
+  .story-grid,
+  .facts-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .cta-card {
+    padding: 2rem;
+  }
+
+  .cta-card h3 {
+    font-size: 1.5rem;
+  }
+
+  .cta-buttons {
+    flex-direction: column;
+  }
+
+  .cta-btn {
+    width: 100%;
+  }
+}

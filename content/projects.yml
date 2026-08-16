@@ -1,121 +1,431 @@
 projects:
   - id: agropilot-cm
     name: Agropilot CM
-    tagline: Comprehensive Farm Management System
-    description: |
-      A precision agriculture platform designed to help farmers manage crop cycles,
-      optimize resource usage, and maximize yields through data-driven insights.
-    technologies:
-      - React
-      - FastAPI
-      - PostgreSQL
-      - ML/Analytics
-    role: Lead Developer
+    tagline: Ecosistema inteligente para modernizar la gestión agropecuaria colombiana
+    full_name: Agropilot CM (formerly Agrosoft CM)
+    type: Own Project / Business
     status: Production
     featured: true
-    link: "#projects"
+    priority: 1
 
-  - id: elite-beauty
-    name: Elite Beauty
-    tagline: E-commerce Platform
-    description: |
-      Full-stack e-commerce solution for beauty products with advanced
-      inventory management and customer analytics.
-    technologies:
-      - React
-      - Node.js
-      - MongoDB
-      - Stripe
-    role: Developer
+    overview: |
+      Plataforma integral que conecta producción agrícola real con datos,
+      inteligencia artificial y automatización. Modernización del agro colombiano
+      mediante tecnología, predicción y decisiones basadas en información.
+
+    problem: |
+      Las fincas colombianas operan con información fragmentada:
+      - Cuadernos físicos vs. datos digitales
+      - Decisiones manuales sin análisis histórico
+      - Costos no medidos claramente
+      - Falta de predictibilidad
+      - Incapacidad de escalar operaciones
+      - Pérdida de oportunidades de optimización
+
+    solution: |
+      Ecosistema digital que captura datos operacionales, los analiza con
+      modelos de ML, genera predicciones y expone un asistente conversacional
+      inteligente para tomar decisiones mejores.
+
+    modules:
+      production:
+        - Producción lechera
+        - Ganadería de carne
+        - Porcicultura
+        - Sistemas silvopastorales
+        - Apiariismo
+        - Cultivos asociados
+
+      management:
+        - Gestión del hato
+        - Inventario de animales
+        - Trazabilidad por individuo
+        - Histórico completo
+        - Transferencia entre fincas
+
+      analytics:
+        - Producción individual y masiva
+        - Predicción de rendimiento
+        - Análisis de costos
+        - Rentabilidad por línea
+        - Alertas de anomalías
+        - Dashboard ejecutivo
+
+      intelligence:
+        - Asistente conversacional
+        - RAG con conocimiento agrícola
+        - Router de modelos
+        - Recomendaciones
+        - Análisis de decisiones
+        - Predicciones en tiempo real
+
+      operations:
+        - Registro de trabajadores
+        - Veterinarios y servicios
+        - Artículos y comentarios
+        - Comunicación interna
+        - Suscripciones y pagos
+
+    technical_architecture:
+      frontend:
+        - React 18 + TypeScript
+        - Redux Toolkit para estado
+        - Tailwind CSS + Lucide icons
+        - Recharts para visualización
+        - Responsive (mobile, tablet, desktop)
+        - Real-time updates
+
+      backend:
+        - Node.js + Express (APIs)
+        - FastAPI + Python (IA, análisis)
+        - Servicios desacoplados
+
+      data_layer:
+        - Supabase + PostgreSQL
+        - Row Level Security (RLS)
+        - JWT autenticación
+        - Realtime subscriptions
+        - Multi-tenant architecture (por farm_id)
+        - pgvector para embeddings
+
+      models_and_ai:
+        - Regresión Lineal
+        - Árboles de Decisión
+        - LSTM (series temporales)
+        - Random Forest
+        - AdaBoost
+        - Ridge Regression
+        - Clasificador de enfermedades
+        - OpenRouter LLM integration
+        - RAG con ChromaDB/Ollama
+        - Model routing con fallback
+
+      infrastructure:
+        - Docker containerization
+        - Render deployment
+        - CI/CD pipelines
+        - Scalable architecture
+
+    multi_tenancy_design: |
+      Cada finca es un tenant independiente.
+      - Aislamiento lógico por farm_id
+      - RLS asegura separación de datos
+      - Usuarios pueden pertenencer a múltiples fincas
+      - Transferencia de animales mantiene historial
+      - Contexto compartido para predicciones cruzadas
+
+    key_achievements:
+      - Módulo de producción lechera completo
+      - Predicción individual con 85%+ accuracy
+      - Asistente que entiende contexto de finca
+      - Sistema de ragas con recuperación de histórico
+      - Plataforma escalable y mantenible
+      - Documentación técnica completa
+
+    learning_outcomes:
+      - Full-stack arquitectura para dominio específico
+      - Multi-tenancy y seguridad
+      - ML aplicado a problema real
+      - RAG en contexto agrícola
+      - Conversación con contexto
+      - Escalabilidad desde inicio
+
+    future_evolution:
+      - Aplicación móvil nativa
+      - IoT y sensores en finca
+      - Computer vision para salud animal
+      - Genética y mejoramiento
+      - Marketplace de servicios
+      - API pública para integraciones
+      - Análisis ambiental
+      - Blockchain para trazabilidad
+
+    significance: |
+      Es donde la finca se convierte en sistema.
+      Donde aprendí a conectar el campo real con la inteligencia digital.
+      Donde todo lo anterior cobra sentido.
+
+  - id: elite-beauty-agent
+    name: Elite Beauty Agent
+    tagline: Agente IA omnicanal para negocio de belleza
+    type: Professional Project (RCKT)
     status: Production
-    featured: false
+    featured: true
+    priority: 2
+
+    overview: |
+      Agente conversacional autónomo que opera en WhatsApp y voz,
+      clasificando leads, conversando con contexto y actuando como
+      secretaria, vendedora y soporte simultáneamente.
+
+    channels:
+      - WhatsApp (conversación)
+      - Twilio Voice (llamadas)
+      - Dashboard (administración)
+
+    features:
+      - Conversaciones contextuales
+      - Clasificación de leads
+      - Histórico de clientes
+      - RAG con políticas de empresa
+      - Recomendación de servicios
+      - Disponibilidad 24/7
+      - CRM integrado
+      - Reportes y métricas
+
+    technical_stack:
+      - FastAPI backend
+      - React/Vite frontend
+      - Supabase pgvector RAG
+      - OpenRouter + Anthropic LLMs
+      - WhatsApp Cloud API
+      - Twilio Voice API
+      - asyncio + threading
+      - WebSockets
+
+    technical_challenges:
+      - Event loop concurrency
+      - Latencia en voz
+      - Continuidad de contexto
+      - Manejo de silencios
+      - Sincronización WhatsApp-voz
+      - Session management
+
+    skills_applied:
+      - LLM routing y fallback
+      - Async Python
+      - Multi-channel architecture
+      - RAG con historial
+      - Agent design
+      - Real-time communication
 
   - id: intermuni-connect
-    name: InterMuniConnect
-    tagline: Municipal Collaboration Network
-    description: |
-      Platform enabling inter-municipal communication and resource sharing
-      for local government efficiency.
-    technologies:
-      - React
-      - FastAPI
-      - PostgreSQL
-    role: Full-Stack Developer
-    status: Active
-    featured: false
+    name: InterMuniConnect / CaliConnect
+    tagline: Plataforma colombiana de carpooling intermunicipal
+    type: Own Project / Product
+    status: Active Development
+    featured: true
+    priority: 3
+
+    overview: |
+      Plataforma tipo Uber para viajes colaborativos entre municipios en Colombia.
+      Conecta pasajeros y conductores, maneja reservas, pagos, rutas y ratings.
+
+    concept: |
+      Mongo decide. Supabase aprende. La IA explica y recomienda.
+      El backend controla. El frontend muestra.
+
+    technical_architecture:
+      frontend:
+        - Ionic + React + TypeScript
+        - Capacitor (web y móvil)
+        - Responsive design
+
+      backend:
+        - Node.js + Express + TypeScript
+        - Prisma ORM
+        - MongoDB (transacciones)
+        - Supabase (analítica, RAG, vectores)
+
+      features:
+        - Registro dinámico por roles
+        - Pasajero vs. Conductor
+        - Verificación de identidad
+        - Gestión de vehículos
+        - Reservas y confirmaciones
+        - QR para validación
+        - Chat en tiempo real
+        - Calificaciones y reseñas
+        - Sistema de pagos
+
+    intelligence_layer:
+      - Recomendación de rutas
+      - Predicción de demanda
+      - Tarificación dinámica (pero determinista)
+      - Análisis de patrones de viaje
+      - Sugerencias de conductores ideales
+
+    key_insight: |
+      IA recomienda pero no inventa. Backend decide. Usuarios ven claridad.
 
   - id: factura-ops
     name: FacturaOps
-    tagline: Invoice & Billing Management
-    description: |
-      Automated invoice generation, tracking, and management system for SMBs
-      with real-time reporting.
-    technologies:
-      - FastAPI
-      - React
-      - PostgreSQL
-      - ReportLab
-    role: Developer
-    status: Production
+    tagline: Plataforma de facturación electrónica colombiana
+    type: Hackathon / MVP
+    status: Proof of Concept
     featured: false
+    priority: 4
 
-  - id: oppy-hound
-    name: OppyHound
-    tagline: Opportunity Discovery Engine
-    description: |
-      AI-powered platform for identifying business opportunities and market gaps
-      using advanced analytics.
-    technologies:
-      - Python
-      - ML/NLP
-      - PostgreSQL
-      - FastAPI
-    role: Lead Developer
-    status: Active
-    featured: false
+    overview: |
+      MVP de facturación electrónica con integración DIAN,
+      agente conversacional y dashboards de auditoría.
 
-  - id: alignerr
-    name: Alignerr
-    tagline: Dental Alignment Tracking
-    description: |
-      Smart application for tracking orthodontic treatment progress with
-      AI-powered alignment analysis.
-    technologies:
-      - React
-      - FastAPI
-      - Computer Vision
-      - PostgreSQL
-    role: Developer
-    status: Beta
-    featured: false
+    workflow:
+      - Emitir factura
+      - Validar con DIAN (o mock DIAN)
+      - Enviar por email
+      - Nota crédito
+      - Auditoría y reportes
 
-  - id: bertolli-pro
+    features:
+      - Dashboard frontend
+      - Agente conversacional
+      - Descargas (XML, JSON, PDF, ZIP)
+      - Reportes de rechazo
+      - OCR y extracción estructurada
+      - WhatsApp por Meta
+      - SQLite reproducible
+
+    technical_approach:
+      - FastAPI backend
+      - React frontend
+      - Reproducibilidad con SQLite
+      - Escalabilidad hacia PostgreSQL
+
+    significance: |
+      Demuestra capacidad de construir MVP funcional bajo presión.
+      Producto orientado, no solo código.
+
+  - id: bertolli-pro-900
     name: Bertolli Pro 900
-    tagline: Advanced Food Processing System
-    description: |
-      Enterprise system for food processing optimization with quality control
-      and production scheduling.
-    technologies:
-      - React
-      - FastAPI
-      - IoT Integration
-      - Real-time Analytics
-    role: Developer
+    tagline: Landing premium con arquitectura escalable
+    type: Technical Assessment / Proof
     status: Production
     featured: false
+    priority: 5
 
-  - id: jac-ia
-    name: JAC-IA Assistant
-    tagline: Agricultural AI Assistant
-    description: |
-      Conversational AI assistant specialized in agricultural consulting,
-      crop management, and sustainable farming practices.
-    technologies:
-      - LLM/RAG
-      - FastAPI
-      - OpenRouter
-      - pgvector
-    role: Creator & Maintainer
-    status: Active
-    featured: true
-    link: "#"
+    overview: |
+      Prueba técnica que evolucionó de landing premium estático
+      a plataforma con backend, RAG e IA integrados.
+
+    technical_journey:
+      phase_1: HTML/CSS/JavaScript puro
+      phase_2: FastAPI backend agregado
+      phase_3: Supabase RAG integrado
+      phase_4: OpenRouter LLM connected
+      phase_5: Asistente conversacional
+
+    deliverables:
+      - Landing accesible (WCAG AA)
+      - Responsive (mobile-first)
+      - Performance optimizado
+      - FAQ interactivo
+      - Galería de productos
+      - Carrito local
+      - Documentación de arquitectura
+      - Propuesta de evolución
+
+    significance: |
+      Demuestra ejecución sólida, atención al detalle y capacidad
+      de evolucionar MVP a sistema. Entrada a RCKT.
+
+  - id: voz-estrategica
+    name: Voz Estratégica
+    tagline: Producto digital con integración IA dentro de ecosistema RCKT
+    type: Professional Project (RCKT)
+    status: Production
+    featured: false
+    priority: 6
+
+    overview: |
+      Producto digital con frontend React, Supabase backend,
+      autenticación, pagos, analítica avanzada y asistente integrado.
+
+    features:
+      - SSR donde aplique
+      - Autenticación segura
+      - Pagos integrados
+      - Analítica (GA4, GTM)
+      - Google Ads tracking
+      - Conversiones y eventos
+      - Email marketing (Resend)
+      - Dashboard administrativo
+
+    technical_considerations:
+      - Sincronización bidireccional con GitHub (Lovable)
+      - Protección contra operaciones destructivas
+      - Mantenimiento conservador de repos
+      - Coordinación de múltiples herramientas
+
+    role_of_jaime: |
+      Proteger arquitectura. Prevenir operaciones destructivas.
+      Sincronizar flujos de trabajo. Mantener standards técnicos.
+
+  - id: portafolio-tania
+    name: Portafolio de Tania
+    tagline: Experiencia interactiva y narrativa
+    type: Collaborative Project
+    status: Production
+    featured: false
+    priority: 7
+
+    overview: |
+      Portafolio interactivo con storytelling visual, cursor personalizado,
+      reveal animations, tilt 3D y carruseles avanzados.
+
+    technical_showcase:
+      - React component architecture
+      - Custom cursor tracking
+      - Intersection Observer animations
+      - 3D perspective transforms
+      - Advanced carousel (ExoticCarousel)
+      - Responsive design
+      - Performance optimized
+
+    design_patterns:
+      - Reveal on scroll
+      - Tilt on hover
+      - Custom cursor
+      - 360° carousel
+      - Lightbox gallery
+      - Narrative flow
+
+    role_of_jaime: |
+      Desarrollo técnico, optimización de componentes,
+      arquitectura escalable, performance y accesibilidad.
+
+  - id: agrodiversity
+    name: AgroDiversity
+    tagline: Investigación en diversificación agrícola y IA
+    type: Research / Academic Project
+    status: Published
+    featured: false
+    priority: 8
+
+    overview: |
+      Proyecto de investigación que conecta sistemas silvopastorales
+      con deep learning y sistemas expertos.
+
+    connection_to_publications: |
+      Base para publicación IEEE CONCAPAN 2025 sobre
+      "Hybrid AI Architecture for Agricultural Diversification"
+
+    research_focus:
+      - Hybrid AI (Deep Learning + Expert Systems)
+      - Agricultural Diversification
+      - Systemic approach
+      - Model integration
+
+    significance: |
+      Demuestra capacidad de investigación aplicada.
+      Conexión entre práctica (Agropilot) y teoría (IEEE).
+
+featured_project_order:
+  1: Agropilot CM
+  2: Elite Beauty Agent
+  3: InterMuniConnect
+  4: FacturaOps
+  5: Bertolli Pro 900
+
+project_tags:
+  - AI/LLM
+  - Full-Stack
+  - Backend
+  - Frontend
+  - RAG
+  - Data Engineering
+  - Research
+  - Professional
+  - Own Project
+  - Academic
+  - Published

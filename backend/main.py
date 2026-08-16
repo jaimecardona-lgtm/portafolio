@@ -1,4 +1,6 @@
 import os
+import yaml
+from pathlib import Path
 from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.staticfiles import StaticFiles
@@ -23,16 +25,72 @@ app.add_middleware(
 OPENROUTER_API_KEY = os.getenv("OPENROUTER_API_KEY")
 OPENROUTER_BASE_URL = "https://openrouter.ai/api/v1"
 
+# Load content YAML files
+def load_yaml(filename: str):
+    filepath = Path(__file__).parent.parent / "content" / f"{filename}.yml"
+    try:
+        with open(filepath, 'r', encoding='utf-8') as f:
+            return yaml.safe_load(f)
+    except Exception as e:
+        print(f"Error loading {filename}: {e}")
+        return {}
+
+PROFILE = load_yaml("profile")
+EXPERIENCE = load_yaml("experience")
+PROJECTS = load_yaml("projects")
+STORY = load_yaml("story")
+PUBLICATIONS = load_yaml("publications")
+
+def build_system_prompt():
+    """Build system prompt with Jaime's information."""
+    profile = PROFILE or {}
+
+    prompt = """Eres JAC-IA, el asistente conversacional de Jaime Cardona Montero.
+
+SOBRE JAIME CARDONA MONTERO:
+"""
+
+    # Profile info
+    if profile.get('name'):
+        prompt += f"- Nombre: {profile.get('name')}\n"
+    if profile.get('title'):
+        prompt += f"- Profesión: {profile.get('title')}\n"
+    if profile.get('location'):
+        prompt += f"- Ubicación: {profile.get('location')}\n"
+    if profile.get('brand_statement'):
+        prompt += f"- Lema: {profile.get('brand_statement')}\n"
+
+    # Quick experience summary
+    prompt += "\nEXPERIENCIA PROFESIONAL:\n"
+    if EXPERIENCE and EXPERIENCE.get('experiences'):
+        for exp in EXPERIENCE['experiences'][:3]:  # Top 3
+            prompt += f"- {exp.get('company', 'N/A')}: {exp.get('position', 'N/A')}\n"
+
+    # Projects summary
+    prompt += "\nPROYECTOS DESTACADOS:\n"
+    if PROJECTS and PROJECTS.get('projects'):
+        for proj in PROJECTS['projects'][:4]:  # Top 4
+            if proj.get('featured'):
+                prompt += f"- {proj.get('name', 'N/A')}: {proj.get('tagline', 'N/A')}\n"
+
+    prompt += """
+
+INSTRUCCIONES:
+1. Responde en español, de forma amable pero técnica.
+2. Sé autén­tico y refleja la personalidad de Jaime: fuerte, técnico, ambicioso, auténtico.
+3. Proporciona información real basada en el contexto disponible.
+4. Si no tienes información sobre algo, sé honesto y sugiere otras preguntas.
+5. Evita respuestas genéricas; sé específico y contundente.
+6. Mantén respuestas concisas pero completas (máximo 200 palabras).
+"""
+
+    return prompt
+
 # Models
-class ChatMessage(BaseModel):
-    role: str
-    content: str
+class ChatRequest(BaseModel):
+    message: str
 
-class ConversationRequest(BaseModel):
-    messages: list[ChatMessage]
-    model: str = "google/gemma-3-4b-it:free"
-
-class ConversationResponse(BaseModel):
+class ChatResponse(BaseModel):
     response: str
     model_used: str
 
@@ -44,19 +102,26 @@ async def health_check():
         "message": "JAC-IA Portfolio API is running"
     }
 
-@app.post("/api/chat", response_model=ConversationResponse)
-async def chat_with_jac_ia(request: ConversationRequest):
+@app.post("/api/chat")
+async def chat_with_jac_ia(request: ChatRequest):
     """
     Conversational endpoint for JAC-IA assistant with OpenRouter integration.
-    Cascade: google/gemma-3-4b-it:free -> openrouter/free
     """
+    user_message = request.message.strip()
+    if not user_message:
+        raise HTTPException(status_code=400, detail="Message cannot be empty")
+
     if not OPENROUTER_API_KEY:
-        raise HTTPException(status_code=500, detail="OpenRouter API key not configured")
+        # Fallback: return helpful local response
+        return ChatResponse(
+            response="Lo siento, el servicio de IA no está configurado en este momento. Intenta de nuevo más tarde.",
+            model_used="local-fallback"
+        )
 
     headers = {
         "Authorization": f"Bearer {OPENROUTER_API_KEY}",
         "Content-Type": "application/json",
-        "HTTP-Referer": "https://jaime-cardona.com",
+        "HTTP-Referer": "https://jaime-cardona.dev",
         "X-Title": "JAC-IA Portfolio Assistant"
     }
 
@@ -65,10 +130,10 @@ async def chat_with_jac_ia(request: ConversationRequest):
         "openrouter/free"
     ]
 
-    # Format messages for OpenRouter API
+    system_prompt = build_system_prompt()
     messages = [
-        {"role": msg.role, "content": msg.content}
-        for msg in request.messages
+        {"role": "system", "content": system_prompt},
+        {"role": "user", "content": user_message}
     ]
 
     for model in models_to_try:
@@ -80,7 +145,7 @@ async def chat_with_jac_ia(request: ConversationRequest):
                     json={
                         "model": model,
                         "messages": messages,
-                        "max_tokens": 1000,
+                        "max_tokens": 800,
                         "temperature": 0.7
                     },
                     timeout=30.0
@@ -89,24 +154,34 @@ async def chat_with_jac_ia(request: ConversationRequest):
                 if response.status_code == 200:
                     data = response.json()
                     assistant_message = data["choices"][0]["message"]["content"]
-                    return ConversationResponse(
+                    return ChatResponse(
                         response=assistant_message,
                         model_used=model
                     )
                 elif response.status_code == 429:
-                    # Rate limited, try next model
                     continue
                 else:
-                    # Try next model
                     continue
 
         except Exception as e:
-            # Try next model on error
+            print(f"Error with model {model}: {e}")
             continue
 
-    raise HTTPException(
-        status_code=503,
-        detail="All OpenRouter models unavailable. Please try again later."
+    # All models failed, return local fallback
+    fallback_responses = {
+        "¿quién es jaime": "Jaime Cardona Montero es un Ingeniero de Sistemas graduado de la Universidad de San Buenaventura Cali, especializado en IA, datos y arquitectura de software. Construye sistemas completos que conectan problemas reales con inteligencia artificial.",
+        "agropilot": "Agropilot CM es un ecosistema inteligente para modernizar la gestión agropecuaria colombiana. Integra React frontend, FastAPI backend, PostgreSQL, modelos de ML y asistentes conversacionales con RAG.",
+        "rckt": "En RCKT, Jaime trabaja como AI & Data Engineer, construyendo soluciones AI-first orientadas a producto. Participa en proyectos como Elite Beauty Agent, Voz Estratégica y arquitectura de sistemas escalables.",
+        "ieee": "Jaime tiene dos publicaciones en IEEE CONCAPAN 2025 sobre arquitecturas híbridas de IA para agricultura y dimensiones ambientales de la inteligencia artificial.",
+    }
+
+    for key, value in fallback_responses.items():
+        if key in user_message.lower():
+            return ChatResponse(response=value, model_used="local-fallback")
+
+    return ChatResponse(
+        response="Interesante pregunta. Lamentablemente, el servicio de IA está temporalmente no disponible, pero te recomiendo explorar las secciones de Historia, Proyectos y Experiencia en el portafolio.",
+        model_used="local-fallback"
     )
 
 @app.post("/api/rag")
@@ -122,15 +197,28 @@ async def rag_query(query: dict):
 
 @app.get("/api/profile")
 async def get_profile():
-    """
-    Get Jaime Cardona's profile information.
-    """
+    """Get Jaime Cardona's profile information."""
+    profile = PROFILE or {}
     return {
-        "name": "Jaime Cardona",
-        "title": "Software Engineer & Agrotech Innovator",
-        "email": "jaime.cardona@rckt.es",
-        "bio": "Building intelligent systems at the intersection of technology and agriculture."
+        "name": profile.get("name", "Jaime Cardona"),
+        "title": profile.get("title", "AI & Data Engineer"),
+        "email": profile.get("email", "jaime.cardona@rckt.es"),
+        "location": profile.get("location", "Cali, Colombia"),
+        "bio": profile.get("bio", "Building intelligent systems.")
     }
+
+@app.get("/api/projects")
+async def get_projects():
+    """Get featured projects."""
+    projects = PROJECTS or {}
+    featured = [p for p in projects.get("projects", []) if p.get("featured")]
+    return {"projects": featured}
+
+@app.get("/api/experience")
+async def get_experience():
+    """Get professional experience."""
+    experience = EXPERIENCE or {}
+    return {"experiences": experience.get("experiences", [])}
 
 # Serve static files (built frontend)
 if os.path.exists("static"):

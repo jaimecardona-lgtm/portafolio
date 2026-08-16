@@ -1,56 +1,81 @@
-experience:
-  - title: Software Engineer & Agrotech Innovator
-    company: Independent
-    period: "2023 - Present"
-    location: Spain
-    description: |
-      Building full-stack applications at the intersection of agriculture and technology.
-      Developing intelligent systems including JAC-IA, an AI assistant for agricultural consulting.
-    achievements:
-      - Created JAC-IA conversational AI with OpenRouter integration
-      - Developed Agropilot CM farm management system
-      - Launched multiple production applications serving diverse sectors
-      - Implemented RAG systems with pgvector for specialized knowledge retrieval
-    technologies:
-      - Python
-      - React
-      - FastAPI
-      - PostgreSQL
-      - AI/ML
-      - LLM Integration
+experiences:
+  - id: alignerr-current
+    company: Alignerr
+    position: AI Model Response Evaluator / Coding Evaluation Specialist
+    type: Freelance
+    modality: Remote
+    location: Cali, Valle del Cauca, Colombia
+    start_date: "2026-06"
+    end_date: null
+    current: true
 
-  - title: Full-Stack Developer
-    company: Various Startups
-    period: "2022 - 2023"
-    location: Spain
     description: |
-      Contributed to multiple startup projects, building scalable solutions
-      and implementing modern development practices.
-    achievements:
-      - Built e-commerce platforms with payment integration
-      - Implemented real-time analytics dashboards
-      - Developed municipal collaboration systems
-      - Managed cloud deployments and DevOps pipelines
-    technologies:
-      - React
-      - Node.js
-      - FastAPI
-      - Docker
-      - AWS
+      Evaluación de respuestas generadas por modelos de inteligencia artificial para tareas
+      técnicas basadas en repositorios de código. Revisión crítica de prompts, transcripts,
+      comandos ejecutados, archivos modificados y calidad final de las soluciones propuestas.
 
-  - title: Junior Developer
-    company: Tech Consulting
-    period: "2021 - 2022"
-    location: Spain
+    responsibilities:
+      - Comparación técnica de respuestas de múltiples modelos de IA
+      - Revisión exhaustiva de código y cambios propuestos
+      - Evaluación de correctitud, mantenibilidad y completitud
+      - Detección de sobreingeniería y fallas de verificación
+      - Redacción de justificaciones basadas en evidencia
+      - Evaluación de agentes de código
+
+  - id: rckt-current
+    company: RCKT
+    position: AI & Data Engineer
+    type: Part-time
+    modality: Remote
+    location: Colombia
+    start_date: "2026-06"
+    end_date: null
+    current: true
+
     description: |
-      Started career in software development, learning full-stack fundamentals
-      and professional development practices.
-    achievements:
-      - Implemented web applications from design to deployment
-      - Collaborated with cross-functional teams
-      - Participated in code reviews and technical documentation
-    technologies:
-      - JavaScript
-      - Python
-      - React
-      - SQL
+      Convierte necesidades de negocio en soluciones técnicas entregables mediante backend,
+      flujos de datos, automatización y agentes de inteligencia artificial.
+
+    key_projects:
+      - Elite Beauty Agent
+      - Voz Estratégica
+      - Portafolio de Tania
+      - SofiaProject
+
+  - id: opportunityhound
+    company: Opportunity Hound / GovBidAI
+    position: Data Analyst & Developer
+    type: Full-time
+    modality: Remote
+    location: Cali, Valle del Cauca, Colombia
+    start_date: "2025-09"
+    end_date: "2026-03"
+
+    description: |
+      Analista de datos y desarrollador con enfoque en Python, backend e integración
+      de inteligencia artificial para la plataforma OppyHound/GovBidAI.
+
+    responsibilities:
+      - Ingeniería y análisis de datos
+      - Servicios backend Python
+      - Integración de modelos IA/ML
+      - Elasticsearch indexación y búsqueda
+      - Testing con Pytest
+
+  - id: dian
+    company: Dirección de Impuestos y Aduanas Nacionales (DIAN)
+    position: University Intern - Data Analyst & Full-Stack Developer
+    type: Internship
+    modality: On-site
+    location: Cali, Valle del Cauca, Colombia
+    start_date: "2025-02"
+    end_date: "2025-09"
+
+    description: |
+      Practicante universitario desarrollando soluciones tecnológicas de valor
+      para la entidad pública.
+
+    main_systems:
+      - Sistema de Inventario y Préstamo de Equipos
+      - Plataforma de Convenios Interinstitucionales
+      - Sistema de Gestión de Roles
