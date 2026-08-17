@@ -1,0 +1,132 @@
+.career-evolution-section {
+  padding: 3rem 0;
+  border-bottom: 1px solid rgba(56, 255, 20, 0.1);
+}
+
+.evolution-timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  margin-top: 2.5rem;
+  position: relative;
+}
+
+.evolution-timeline::before {
+  content: '';
+  position: absolute;
+  left: 40px;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: linear-gradient(180deg, #38ff14, rgba(56, 255, 20, 0.2));
+}
+
+.evolution-node {
+  display: flex;
+  gap: 1.5rem;
+  margin-bottom: 1rem;
+  align-items: flex-start;
+  position: relative;
+  padding: 1.5rem 0 1.5rem 2.5rem;
+}
+
+.evolution-node::before {
+  content: '';
+  position: absolute;
+  left: 22px;
+  top: 2rem;
+  width: 36px;
+  height: 36px;
+  background: rgba(56, 255, 20, 0.1);
+  border: 2px solid #38ff14;
+  border-radius: 50%;
+  z-index: 1;
+}
+
+.node-stage-label {
+  font-family: 'Courier New', monospace;
+  font-size: 0.85rem;
+  font-weight: bold;
+  color: #00d9ff;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  white-space: nowrap;
+  min-width: 60px;
+}
+
+.node-content {
+  flex: 1;
+  padding: 1rem;
+  background: rgba(11, 23, 40, 0.6);
+  border-left: 2px solid rgba(56, 255, 20, 0.3);
+  border-radius: 4px;
+}
+
+.node-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #38ff14;
+  margin: 0 0 0.5rem;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+.node-description {
+  color: #d4d4d8;
+  font-size: 0.95rem;
+  line-height: 1.4;
+  margin: 0;
+}
+
+.node-arrow {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: rgba(56, 255, 20, 0.3);
+  font-size: 1.5rem;
+  font-weight: 300;
+  height: 1.5rem;
+  margin: -0.5rem 0;
+}
+
+@media (max-width: 768px) {
+  .career-evolution-section {
+    padding: 2rem 0;
+  }
+
+  .evolution-timeline::before {
+    left: 20px;
+  }
+
+  .evolution-node {
+    padding: 1rem 0 1rem 1.5rem;
+  }
+
+  .evolution-node::before {
+    left: 6px;
+    width: 28px;
+    height: 28px;
+    top: 1.5rem;
+  }
+
+  .node-stage-label {
+    font-size: 0.75rem;
+    min-width: 50px;
+  }
+
+  .node-content {
+    padding: 0.75rem;
+  }
+
+  .node-title {
+    font-size: 0.95rem;
+  }
+
+  .node-description {
+    font-size: 0.85rem;
+  }
+
+  .node-arrow {
+    font-size: 1.2rem;
+  }
+}

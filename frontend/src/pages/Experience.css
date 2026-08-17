@@ -1,0 +1,30 @@
+.experience-page {
+  padding: 3rem 0;
+}
+
+.wrap {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+/* Responsive breakpoints */
+@media (max-width: 768px) {
+  .experience-page {
+    padding: 2rem 0;
+  }
+
+  .wrap {
+    padding: 0 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .experience-page {
+    padding: 1rem 0;
+  }
+
+  .wrap {
+    padding: 0 0.75rem;
+  }
+}
