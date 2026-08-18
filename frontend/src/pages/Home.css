@@ -1,0 +1,53 @@
+/* HOME PAGE LAYOUT */
+.home {
+  width: 100%;
+  overflow-x: clip;
+  padding: 0.5rem 0;
+}
+
+html,
+body,
+#root {
+  max-width: 100%;
+  overflow-x: clip;
+}
+
+.wrap {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+/* SECTION SPACING */
+section {
+  padding: 2rem 0;
+  scroll-margin-top: 80px;
+}
+
+section:first-child {
+  padding-top: 0.5rem;
+}
+
+/* SCROLL REVEAL ANIMATIONS */
+.scroll-reveal {
+  opacity: 0;
+  transform: translateY(40px);
+}
+
+.scroll-reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+@media (max-width: 768px) {
+  .wrap {
+    padding: 0 1.5rem;
+  }
+}
+
+@media (max-width: 360px) {
+  .wrap {
+    padding: 0 1rem;
+  }
+}

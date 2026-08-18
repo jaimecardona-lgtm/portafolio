@@ -1,0 +1,259 @@
+story:
+  title: De la finca al sistema
+  subtitle: Cómo un campo real se convirtió en inteligencia artificial
+
+  chapters:
+    - id: 00-initialization
+      title: "00 — Inicialización"
+      subtitle: JAIME://FIELD_OS v1.0
+      content: |
+        Antes de construir sistemas digitales, aprendí a observar sistemas vivos.
+
+    - id: 01-the-roots
+      title: "01 — La raíz"
+      subtitle: La finca como laboratorio
+      narrative: |
+        La finca no era un hobby. Era un sistema de producción con reglas reales.
+
+        Animales que necesitaban comida, agua, salud.
+        Decisiones que tenían consecuencias visibles.
+        Costos que se medían en dinero y resultados.
+        Ciclos que se repetían pero nunca eran idénticos.
+        Información fragmentada en cuadernos, conversaciones y memoria.
+        Errores que costaban dinero. Aciertos que generaban ganancia.
+
+      key_learnings:
+        - Sistemas vivos son impredecibles pero observables
+        - Datos correctos = decisiones mejores
+        - Información retrasada = decisiones antiguas
+        - Automatización = liberación de tiempo para lo importante
+        - Escala requiere pensamiento sistémico
+        - Falla en la finca = pérdida real, no bonito error de código
+
+      connection: |
+        Este fue el origen de Agropilot CM.
+        No nació como idea. Nació como necesidad.
+
+    - id: 02-learning-to-build
+      title: "02 — Aprender a construir"
+      subtitle: Del campo a la ingeniería
+      narrative: |
+        La Universidad de San Buenaventura Cali enseñó el lenguaje formal.
+
+        Estructuras de datos.
+        Algoritmos.
+        Arquitectura.
+        Seguridad.
+        Redes.
+        Bases de datos.
+        Principios que transformaron la observación empírica en pensamiento sistemático.
+
+      key_learnings:
+        - Ingeniería es resolución de problemas con herramientas sistemáticas
+        - Código es lenguaje de máquinas, arquitectura es lenguaje de sistemas
+        - Diseño precede a implementación
+        - Documentación es comunicación permanente
+        - Errores en diseño son costosos; errores en código son educativos
+
+    - id: 03-systems-thinking
+      title: "03 — Ingeniería de Sistemas"
+      subtitle: Conectando partes, viendo el todo
+      narrative: |
+        Ingeniería de Sistemas enseña a ver las partes y sus relaciones.
+
+        No es solo frontend o backend.
+        No es solo base de datos o interfaz.
+        Es la capacidad de entender cómo todas las capas se conectan.
+        Cómo un cambio en los datos afecta la lógica.
+        Cómo la seguridad atraviesa todas las capas.
+        Cómo la experiencia del usuario depende de arquitectura invisible.
+
+    - id: 04-dian-experience
+      title: "04 — La práctica en DIAN"
+      subtitle: Sistemas públicos, datos reales, responsabilidad
+      narrative: |
+        En la DIAN construí sistemas para una entidad tributaria colombiana.
+
+        Inventarios de bienes.
+        Préstamos y devoluciones.
+        Convenios y trazabilidad.
+        Roles y rotación de personal.
+
+        Aprendizaje clave: sistemas públicos no son experimentos.
+        Tienen usuarios reales.
+        Tienen regulación.
+        Tienen datos sensibles.
+        La seguridad, documentación y mantenimiento son obligatorios, no opcionales.
+
+      skills_forged:
+        - Active Directory and enterprise security
+        - Data sensitivity and compliance
+        - Multi-user systems
+        - Government context and constraints
+        - Maintenance and support as core responsibilities
+
+    - id: 05-data-and-ai
+      title: "05 — Datos e IA en Opportunity Hound"
+      subtitle: Del análisis a la predicción
+      narrative: |
+        En Opportunity Hound / GovBidAI trabajé con datos a escala.
+
+        Ingeniería de datos.
+        Python y backend robusto.
+        Elasticsearch para búsqueda y análisis.
+        Modelos conversacionales.
+        AWS y infraestructura.
+
+        Entendí que IA no es magia. Es matemática, datos buenos y arquitectura sólida.
+
+      key_insight: |
+        Basura dentro = basura fuera.
+        Datos limpios + modelos simples = mejor que datos sucios + modelos complejos.
+
+    - id: 06-agropilot-birth
+      title: "06 — Nace Agropilot CM"
+      subtitle: Del problema al ecosistema
+      narrative: |
+        Agropilot CM no fue un proyecto.
+        Fue la materialización de todo lo aprendido.
+
+        Observación: fincas colombianas necesitan modernización.
+        Análisis: información dispersa, decisiones manuales, costos no medidos.
+        Solución: plataforma integral con datos, modelos, IA y automatización.
+
+        Frontend que habla con granjeros.
+        Backend que procesa decisiones.
+        Datos que crecen con la finca.
+        IA que aprende del historial.
+
+      architecture_essence: |
+        - Multi-tenant por finca
+        - Producción lechera, silvopastoral, porcicultura
+        - Predicción individual y masiva
+        - Asistente conversacional
+        - RAG con conocimiento agrícola
+        - Router de modelos con fallback
+
+      significance: |
+        Es donde la finca se convierte en sistema.
+        Donde el pasado informa el futuro.
+        Donde el granjero toma decisiones mejores porque el sistema ve más.
+
+    - id: 07-tech-proof
+      title: "07 — De una prueba técnica a RCKT"
+      subtitle: Bertolli Pro 900 y el viaje a producción
+      narrative: |
+        Bertolli Pro 900 fue una prueba técnica.
+        Premium landing. Accesibilidad WCAG AA. Responsive. Hermoso.
+
+        Pero también fue la entrada a RCKT.
+        Una empresa donde la tecnología sirve a negocios reales.
+        Donde la IA no es moda, es solución.
+
+      transformation: |
+        Bertolli empezó como HTML/CSS/JavaScript puro.
+        Evolucionó a FastAPI + Supabase + RAG.
+        La arquitectura fue pensada para escala.
+
+    - id: 08-agents-voice-automation
+      title: "08 — Agentes, voz y automatización"
+      subtitle: IA hablando con clientes
+      narrative: |
+        En RCKT construí Elite Beauty Agent.
+
+        Un agente que entiende WhatsApp.
+        Que puede hablar por teléfono.
+        Que aprende del historial.
+        Que clasifica leads.
+        Que actúa como secretaria, vendedora y soporte.
+
+        No es un chatbot. Es un sistema autónomo con responsabilidades reales.
+
+      technical_challenge: |
+        Concurrencia. Event loops. Síncrono y asíncrono.
+        Latencia de voz. Manejo de silencio. Continuidad de contexto.
+        RAG con historiales de clientes. Decisiones en tiempo real.
+
+      business_impact: |
+        Automatización del sales process.
+        Disponibilidad 24/7.
+        Reducción de carga manual.
+        Mejor experiencia de cliente.
+
+    - id: 09-ai-evaluation
+      title: "09 — Evaluar inteligencia artificial"
+      subtitle: "Alignerr: criterio sobre soluciones"
+      narrative: |
+        En Alignerr evalúo respuestas de modelos de IA.
+
+        No solo código. Pensamiento. Arquitectura. Decisiones.
+        ¿Es correcto? ¿Es mantenible? ¿Qué falta? ¿Qué sobra?
+
+        Esto me enseña cómo piensan los modelos.
+        Qué entienden. Qué les confunde. Dónde fallan.
+
+      significance: |
+        Entender cómo fallamos nos enseña a diseñar mejor.
+        Evaluar código de IA nos enseña criterio.
+        Criterio nos enseña liderazgo.
+
+    - id: 10-research-publications
+      title: "10 — Investigación y publicaciones"
+      subtitle: IEEE CONCAPAN 2025
+      narrative: |
+        Dos publicaciones en IEEE CONCAPAN 2025.
+
+        Una sobre arquitecturas híbridas de IA para agricultura.
+        Otra sobre dimensiones ambientales de la IA.
+
+        No son investigación teórica desconectada.
+        Son reflexión sobre lo que construyo.
+        Ciencia sobre práctica.
+
+    - id: 11-current-quest
+      title: "11 — La misión actual"
+      subtitle: Sistemas completos, criterio, impacto
+      narrative: |
+        Hoy trabajo en RCKT como AI & Data Engineer.
+
+        Proyecto tras proyecto, construyo soluciones que conectan:
+        - Problemas reales de negocio
+        - Datos confiables
+        - Arquitectura sólida
+        - Inteligencia aplicada
+        - Automatización útil
+        - Experiencia clara
+
+        No es trabajo de un solo rol.
+        Es orquestación de ingeniero, arquitecto, científico, diseñador y pensador de producto.
+
+  core_identity: |
+    Campo + Ingeniería + Datos + Inteligencia + Producto = Sistemas que funcionan.
+
+    Esa es mi manera de pensar.
+    Esa es lo que construyo.
+    Eso es lo que busco transmitir.
+
+  personal_values:
+    - Build real solutions to real problems
+    - Understand before coding
+    - Architecture matters
+    - Documentation is not optional
+    - Security is fundamental
+    - Sustainability and responsibility in AI
+    - Team and communication
+    - Learning continuously
+    - Execution over perfection
+    - Long-term thinking
+
+  future_vision: |
+    Seguir construyendo sistemas que combinen:
+    - Visión agrícola (de dónde vine)
+    - Ingeniería sólida (cómo pienso)
+    - Inteligencia artificial (hacia dónde vamos)
+    - Impacto real (para qué)
+
+    Ser referente técnico en IA aplicada al agro.
+    Contribuir a modernizar el campo colombiano.
+    Construir equipos que entiendan sistemas complejos.
+    Liderar con criterio y ejecución.

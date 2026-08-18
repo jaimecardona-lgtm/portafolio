@@ -1,0 +1,229 @@
+.career-signal {
+  padding: 5rem 0;
+  background: linear-gradient(135deg, rgba(7, 16, 31, 0.5) 0%, rgba(56, 255, 20, 0.05) 100%);
+  border-top: 1px solid rgba(0, 217, 255, 0.15);
+  border-bottom: 1px solid rgba(56, 255, 20, 0.15);
+}
+
+.signal-header {
+  margin-bottom: 3rem;
+  display: flex;
+  align-items: flex-start;
+  gap: 2rem;
+}
+
+.signal-header .section-number {
+  font-size: 3rem;
+  font-weight: bold;
+  color: rgba(56, 255, 20, 0.2);
+  font-family: 'Courier New', monospace;
+  line-height: 1;
+}
+
+.signal-header .section-title {
+  font-size: 2rem;
+  color: #38ff14;
+  letter-spacing: 2px;
+  margin: 0;
+  font-weight: bold;
+}
+
+.career-grid {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 3rem;
+  margin-bottom: 2rem;
+}
+
+.career-timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  position: relative;
+}
+
+.career-timeline::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: linear-gradient(180deg, #38ff14, #00d9ff, rgba(56, 255, 20, 0.2));
+}
+
+.timeline-node {
+  padding: 1.2rem;
+  background: rgba(11, 23, 40, 0.6);
+  border: 2px solid rgba(168, 179, 197, 0.2);
+  text-align: left;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border-radius: 4px;
+  position: relative;
+  margin-left: 0.5rem;
+}
+
+.timeline-node::before {
+  content: '';
+  position: absolute;
+  left: -11px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 12px;
+  height: 12px;
+  background: rgba(11, 23, 40, 1);
+  border: 2px solid rgba(168, 179, 197, 0.3);
+  border-radius: 50%;
+  transition: all 0.3s ease;
+}
+
+.timeline-node:hover {
+  border-color: #00d9ff;
+  box-shadow: inset 0 0 10px rgba(0, 217, 255, 0.1);
+}
+
+.timeline-node:hover::before {
+  border-color: #00d9ff;
+  background: rgba(0, 217, 255, 0.3);
+}
+
+.timeline-node.active {
+  background: rgba(56, 255, 20, 0.15);
+  border-color: #38ff14;
+  box-shadow: 0 0 20px rgba(56, 255, 20, 0.2), inset 0 0 10px rgba(56, 255, 20, 0.05);
+}
+
+.timeline-node.active::before {
+  background: #38ff14;
+  border-color: #38ff14;
+  box-shadow: 0 0 10px rgba(56, 255, 20, 0.5);
+}
+
+.node-year {
+  display: block;
+  font-size: 0.8rem;
+  color: rgba(56, 255, 20, 0.6);
+  font-family: 'Courier New', monospace;
+  letter-spacing: 0.5px;
+  margin-bottom: 0.3rem;
+}
+
+.node-company {
+  display: block;
+  font-size: 1rem;
+  font-weight: bold;
+  color: #a8b3c5;
+  transition: color 0.3s ease;
+}
+
+.timeline-node.active .node-company {
+  color: #38ff14;
+}
+
+.career-detail {
+  padding: 2rem;
+  background: rgba(11, 23, 40, 0.8);
+  border: 1px solid rgba(56, 255, 20, 0.2);
+  border-radius: 8px;
+  min-height: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.detail-role {
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: #38ff14;
+  margin-bottom: 1rem;
+  letter-spacing: 0.5px;
+}
+
+.detail-description {
+  color: #d4d4d8;
+  line-height: 1.8;
+  font-size: 1rem;
+  margin: 0 0 1.5rem 0;
+  flex-grow: 1;
+}
+
+.detail-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+}
+
+.tag {
+  padding: 0.5rem 1rem;
+  background: rgba(56, 255, 20, 0.1);
+  border: 1px solid #38ff14;
+  color: #38ff14;
+  border-radius: 3px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  font-family: 'Courier New', monospace;
+}
+
+.career-footer {
+  text-align: center;
+}
+
+.career-cta {
+  display: inline-block;
+  padding: 0.8rem 1.5rem;
+  background: rgba(56, 255, 20, 0.1);
+  border: 1px solid #38ff14;
+  color: #38ff14;
+  text-decoration: none;
+  border-radius: 4px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.career-cta:hover {
+  background: rgba(56, 255, 20, 0.2);
+  box-shadow: 0 0 15px rgba(56, 255, 20, 0.3);
+}
+
+@media (max-width: 1024px) {
+  .career-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .career-timeline::before {
+    left: 50%;
+  }
+}
+
+@media (max-width: 768px) {
+  .career-signal {
+    padding: 3rem 0;
+  }
+
+  .signal-header {
+    gap: 1rem;
+  }
+
+  .signal-header .section-number {
+    font-size: 2rem;
+  }
+
+  .signal-header .section-title {
+    font-size: 1.5rem;
+  }
+
+  .career-timeline {
+    gap: 0.8rem;
+  }
+
+  .timeline-node {
+    padding: 1rem;
+    font-size: 0.9rem;
+  }
+
+  .career-detail {
+    min-height: auto;
+    padding: 1.5rem;
+  }
+}

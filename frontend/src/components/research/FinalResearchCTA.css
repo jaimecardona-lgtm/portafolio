@@ -1,0 +1,92 @@
+.final-research-cta {
+  padding: 3rem 0;
+}
+
+.cta-headline {
+  font-size: 1.6rem;
+  color: #FFB800;
+  font-weight: 700;
+  text-align: center;
+  margin: 2rem 0;
+  line-height: 1.6;
+}
+
+.cta-text {
+  text-align: center;
+  color: #d4d4d8;
+  font-size: 1.05rem;
+  line-height: 1.6;
+  margin: 1.5rem 0 2.5rem;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.cta-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-top: 2rem;
+}
+
+.cta-btn {
+  padding: 1rem 2rem;
+  border: 2px solid;
+  background: transparent;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  min-width: 180px;
+}
+
+.cta-btn.projects {
+  border-color: #38ff14;
+  color: #38ff14;
+}
+
+.cta-btn.projects:hover {
+  background: rgba(56, 255, 20, 0.1);
+  box-shadow: 0 0 20px rgba(56, 255, 20, 0.3);
+  transform: translateY(-2px);
+}
+
+.cta-btn.experience {
+  border-color: #00d9ff;
+  color: #00d9ff;
+}
+
+.cta-btn.experience:hover {
+  background: rgba(0, 217, 255, 0.1);
+  box-shadow: 0 0 20px rgba(0, 217, 255, 0.3);
+  transform: translateY(-2px);
+}
+
+.cta-btn.chat {
+  border-color: #9370DB;
+  color: #9370DB;
+}
+
+.cta-btn.chat:hover {
+  background: rgba(147, 112, 219, 0.1);
+  box-shadow: 0 0 20px rgba(147, 112, 219, 0.3);
+  transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+  .cta-headline {
+    font-size: 1.2rem;
+  }
+
+  .cta-buttons {
+    flex-direction: column;
+  }
+
+  .cta-btn {
+    width: 100%;
+  }
+}

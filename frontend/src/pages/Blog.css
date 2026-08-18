@@ -1,0 +1,955 @@
+/* BLOG PAGE LAYOUT */
+.blog-page {
+  padding: 0.5rem 0;
+}
+
+.wrap {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+/* SECTION SPACING - GENEROUS VERTICAL RHYTHM */
+section {
+  padding: 2rem 0;
+  scroll-margin-top: 80px;
+}
+
+section:first-child {
+  padding-top: 0.5rem;
+}
+
+/* SECTION STRUCTURE */
+.section-header {
+  display: flex;
+  align-items: baseline;
+  gap: 1.5rem;
+  margin-bottom: 3.5rem;
+}
+
+.section-number {
+  font-family: 'Courier New', monospace;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: rgba(56, 255, 20, 0.25);
+  flex-shrink: 0;
+  letter-spacing: 1px;
+}
+
+.section-title {
+  font-size: 2.2rem;
+  font-weight: 900;
+  color: #38ff14;
+  letter-spacing: 0.5px;
+  margin: 0;
+}
+
+/* ============================================
+   01 HERO SECTION
+   ============================================ */
+.blog-hero-section {
+  padding: 5rem 0 4rem !important;
+  border-bottom: 1px solid rgba(56, 255, 20, 0.1);
+}
+
+.hero-eyebrow {
+  display: block;
+  font-family: 'Courier New', monospace;
+  font-size: 0.8rem;
+  letter-spacing: 2px;
+  color: #00d9ff;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-bottom: 1.5rem;
+}
+
+.hero-title {
+  font-size: 3.5rem;
+  font-weight: 900;
+  color: #38ff14;
+  letter-spacing: -0.5px;
+  text-shadow: 0 0 20px rgba(56, 255, 20, 0.6);
+  margin: 0 0 1.5rem;
+  animation: neonGlowGreen 2.5s ease-in-out infinite;
+  line-height: 1.1;
+}
+
+.hero-subtitle {
+  font-size: 1.25rem;
+  color: #d4d4d8;
+  line-height: 1.8;
+  margin: 0 0 1.25rem;
+  max-width: 900px;
+}
+
+.hero-description {
+  color: #a8b3c5;
+  font-size: 1rem;
+  line-height: 1.7;
+  max-width: 900px;
+  margin: 0 0 2.5rem;
+}
+
+.hero-signals {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin: 2.5rem 0;
+}
+
+.signal-badge {
+  padding: 0.6rem 1.25rem;
+  background: rgba(56, 255, 20, 0.08);
+  border: 1px solid rgba(56, 255, 20, 0.35);
+  color: #38ff14;
+  font-size: 0.75rem;
+  border-radius: 6px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  transition: all 0.3s ease;
+}
+
+.signal-badge:hover {
+  background: rgba(56, 255, 20, 0.15);
+  border-color: #38ff14;
+}
+
+.hero-ctas {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  margin-top: 2.5rem;
+}
+
+.cta-btn {
+  padding: 1rem 2.25rem;
+  border: 2px solid;
+  background: transparent;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+}
+
+.cta-btn.explore {
+  border-color: #38ff14;
+  color: #38ff14;
+}
+
+.cta-btn.explore:hover {
+  background: rgba(56, 255, 20, 0.12);
+  box-shadow: 0 0 25px rgba(56, 255, 20, 0.35);
+  transform: translateY(-2px);
+}
+
+.cta-btn.chat {
+  border-color: #9370DB;
+  color: #9370DB;
+}
+
+.cta-btn.chat:hover {
+  background: rgba(147, 112, 219, 0.12);
+  box-shadow: 0 0 25px rgba(147, 112, 219, 0.35);
+  transform: translateY(-2px);
+}
+
+/* ============================================
+   02 THOUGHT STREAM
+   ============================================ */
+.thought-stream-section {
+  border-bottom: 1px solid rgba(56, 255, 20, 0.1);
+}
+
+.thoughts-container {
+  display: grid;
+  gap: 1.25rem;
+  margin-top: 2.5rem;
+}
+
+.thought-card {
+  padding: 1.75rem;
+  background: rgba(11, 23, 40, 0.5);
+  border: 1px solid rgba(56, 255, 20, 0.2);
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-align: left;
+}
+
+.thought-card:hover,
+.thought-card.active {
+  border-color: #38ff14;
+  background: rgba(56, 255, 20, 0.12);
+  transform: translateX(8px);
+}
+
+.thought-card p {
+  color: #d4d4d8;
+  margin: 0;
+  line-height: 1.7;
+  font-size: 1.05rem;
+  font-style: italic;
+}
+
+/* ============================================
+   03 TOPIC NAVIGATOR
+   ============================================ */
+.topic-navigator-section {
+  border-bottom: 1px solid rgba(56, 255, 20, 0.1);
+}
+
+.category-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin: 2.5rem 0 2rem;
+}
+
+.filter-btn {
+  padding: 0.7rem 1.25rem;
+  background: transparent;
+  border: 1px solid rgba(56, 255, 20, 0.35);
+  color: #a8b3c5;
+  cursor: pointer;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  transition: all 0.2s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.filter-btn.active {
+  border-color: #38ff14;
+  background: rgba(56, 255, 20, 0.12);
+  color: #38ff14;
+}
+
+.filter-btn:hover {
+  border-color: #38ff14;
+  color: #38ff14;
+}
+
+.filter-btn .count {
+  font-size: 0.75rem;
+  opacity: 0.65;
+  margin-left: 0.4rem;
+}
+
+.search-box {
+  margin: 2rem 0 0;
+}
+
+.search-box input {
+  width: 100%;
+  padding: 1rem;
+  background: rgba(11, 23, 40, 0.5);
+  border: 1px solid rgba(56, 255, 20, 0.2);
+  color: #d4d4d8;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  font-family: 'Courier New', monospace;
+  transition: all 0.3s ease;
+}
+
+.search-box input:focus {
+  outline: none;
+  border-color: #38ff14;
+  box-shadow: 0 0 15px rgba(56, 255, 20, 0.2);
+  background: rgba(11, 23, 40, 0.7);
+}
+
+.search-box input::placeholder {
+  color: rgba(168, 179, 197, 0.4);
+}
+
+/* ============================================
+   04 FEATURED NOTE
+   ============================================ */
+.featured-note-section {
+  border-bottom: 1px solid rgba(56, 255, 20, 0.1);
+}
+
+.featured-card {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: center;
+  padding: 2.5rem;
+  background: rgba(56, 255, 20, 0.05);
+  border: 1px solid rgba(56, 255, 20, 0.2);
+  border-radius: 8px;
+  margin-top: 2.5rem;
+}
+
+.featured-left {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.featured-number {
+  font-size: 3.5rem;
+  font-weight: 900;
+  color: rgba(56, 255, 20, 0.15);
+  line-height: 1;
+}
+
+.featured-type {
+  font-size: 0.75rem;
+  color: #00d9ff;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.featured-title {
+  font-size: 1.9rem;
+  color: #38ff14;
+  margin: 0;
+  font-weight: 900;
+  line-height: 1.25;
+}
+
+.featured-thesis {
+  color: #d4d4d8;
+  line-height: 1.8;
+  margin: 0;
+  font-size: 1.05rem;
+}
+
+.open-note-btn {
+  padding: 0.95rem 2rem;
+  background: transparent;
+  border: 2px solid #38ff14;
+  color: #38ff14;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-size: 0.85rem;
+  width: fit-content;
+}
+
+.open-note-btn:hover {
+  background: rgba(56, 255, 20, 0.12);
+  box-shadow: 0 0 20px rgba(56, 255, 20, 0.3);
+}
+
+.rag-flow {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.flow-item {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+}
+
+.flow-icon {
+  width: 45px;
+  height: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(56, 255, 20, 0.15);
+  border: 1.5px solid rgba(56, 255, 20, 0.3);
+  border-radius: 50%;
+  color: #38ff14;
+  font-weight: 700;
+  flex-shrink: 0;
+  font-size: 1rem;
+}
+
+.flow-text {
+  color: #d4d4d8;
+  font-size: 0.95rem;
+  font-weight: 500;
+  flex: 1;
+}
+
+.flow-arrow {
+  color: rgba(56, 255, 20, 0.25);
+  font-size: 1.2rem;
+  text-align: center;
+  width: 100%;
+  line-height: 0.5;
+}
+
+/* ============================================
+   05 KNOWLEDGE GRID
+   ============================================ */
+.knowledge-grid-section {
+  border-bottom: 1px solid rgba(56, 255, 20, 0.1);
+}
+
+.notes-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.75rem;
+  margin-top: 2.5rem;
+}
+
+.note-card {
+  padding: 1.75rem;
+  background: rgba(11, 23, 40, 0.5);
+  border: 1px solid rgba(56, 255, 20, 0.2);
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.note-card.large {
+  grid-column: span 1;
+}
+
+.note-card:hover {
+  border-color: #38ff14;
+  background: rgba(56, 255, 20, 0.12);
+  transform: translateY(-6px);
+  box-shadow: 0 10px 30px rgba(56, 255, 20, 0.15);
+}
+
+.note-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+
+.note-id {
+  font-size: 0.7rem;
+  color: rgba(56, 255, 20, 0.45);
+  font-family: 'Courier New', monospace;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.note-type {
+  font-size: 0.7rem;
+  color: #00d9ff;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.note-title {
+  color: #38ff14;
+  font-size: 1.25rem;
+  margin: 0;
+  font-weight: 800;
+  line-height: 1.35;
+}
+
+.note-thesis {
+  color: #d4d4d8;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin: 0;
+  flex-grow: 1;
+}
+
+.note-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 1rem;
+  margin-top: auto;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(56, 255, 20, 0.1);
+}
+
+.note-tags {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.note-tag {
+  padding: 0.3rem 0.7rem;
+  background: rgba(56, 255, 20, 0.1);
+  color: #38ff14;
+  font-size: 0.65rem;
+  border-radius: 3px;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+}
+
+.project-ref {
+  font-size: 0.7rem;
+  color: #00d9ff;
+  font-weight: 700;
+}
+
+/* ============================================
+   06 DECISION LOG
+   ============================================ */
+.decision-log-section {
+  border-bottom: 1px solid rgba(56, 255, 20, 0.1);
+}
+
+.decision-selector {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin: 2.5rem 0 2rem;
+}
+
+.decision-btn {
+  padding: 0.7rem 1.25rem;
+  background: rgba(11, 23, 40, 0.5);
+  border: 1px solid rgba(56, 255, 20, 0.3);
+  color: #a8b3c5;
+  cursor: pointer;
+  border-radius: 6px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-size: 0.8rem;
+}
+
+.decision-btn.active {
+  border-color: #38ff14;
+  background: rgba(56, 255, 20, 0.12);
+  color: #38ff14;
+}
+
+.decision-btn:hover {
+  border-color: #38ff14;
+  color: #38ff14;
+}
+
+.decision-panel {
+  padding: 2.5rem;
+  background: rgba(56, 255, 20, 0.05);
+  border: 1px solid rgba(56, 255, 20, 0.2);
+  border-radius: 8px;
+  margin-top: 2rem;
+  animation: fadeIn 0.3s ease;
+}
+
+.decision-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2.5rem;
+  margin-bottom: 2.5rem;
+}
+
+.decision-row:last-child {
+  margin-bottom: 0;
+}
+
+.decision-cell h4 {
+  color: #00d9ff;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  margin: 0 0 1rem;
+  letter-spacing: 1px;
+  font-weight: 700;
+}
+
+.decision-cell p {
+  color: #d4d4d8;
+  line-height: 1.7;
+  margin: 0;
+  font-size: 0.95rem;
+}
+
+.decision-highlight {
+  color: #38ff14;
+  font-weight: 700;
+}
+
+/* ============================================
+   07 LESSON LOG
+   ============================================ */
+.lesson-log-section {
+  border-bottom: 1px solid rgba(56, 255, 20, 0.1);
+}
+
+.lessons-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.75rem;
+  margin-top: 2.5rem;
+}
+
+.lesson-card {
+  padding: 1.75rem;
+  background: rgba(11, 23, 40, 0.5);
+  border: 1px solid rgba(255, 184, 0, 0.3);
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-align: left;
+}
+
+.lesson-card:hover,
+.lesson-card.active {
+  border-color: #FFB800;
+  background: rgba(255, 184, 0, 0.08);
+}
+
+.lesson-card h4 {
+  color: #FFB800;
+  margin: 0;
+  font-weight: 800;
+  font-size: 1.1rem;
+}
+
+.lesson-content {
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(255, 184, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.lesson-item {
+  color: #d4d4d8;
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+.lesson-item strong {
+  color: #FFB800;
+  font-weight: 700;
+}
+
+/* ============================================
+   08 QUESTS
+   ============================================ */
+.quests-section {
+  border-bottom: 1px solid rgba(56, 255, 20, 0.1);
+}
+
+.quests-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.75rem;
+  margin-top: 2.5rem;
+}
+
+.quest-card {
+  padding: 1.75rem;
+  background: rgba(11, 23, 40, 0.5);
+  border: 1.5px solid rgba(56, 255, 20, 0.2);
+  border-radius: 8px;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.quest-card.quest-building {
+  border-color: #38ff14;
+  background: rgba(56, 255, 20, 0.05);
+}
+
+.quest-card.quest-exploring {
+  border-color: #00d9ff;
+  background: rgba(0, 217, 255, 0.05);
+}
+
+.quest-card.quest-future {
+  border-color: rgba(56, 255, 20, 0.15);
+  opacity: 0.65;
+}
+
+.quest-card:hover:not(.quest-future) {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 30px rgba(56, 255, 20, 0.1);
+}
+
+.quest-status {
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: inherit;
+}
+
+.quest-card h3 {
+  color: #d4d4d8;
+  margin: 1rem 0 0;
+  font-size: 1.15rem;
+  font-weight: 700;
+}
+
+/* ============================================
+   09 JAC-IA QUESTIONS
+   ============================================ */
+.blog-jacia-section {
+  border-bottom: 1px solid rgba(56, 255, 20, 0.1);
+}
+
+.jacia-intro {
+  color: #a8b3c5;
+  font-size: 1.05rem;
+  line-height: 1.6;
+  margin: 0.5rem 0 2.5rem;
+}
+
+.jacia-questions {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.75rem;
+  margin-top: 2.5rem;
+}
+
+.jacia-btn {
+  padding: 1.75rem;
+  background: rgba(11, 23, 40, 0.5);
+  border: 1px solid rgba(147, 112, 219, 0.3);
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: flex-start;
+  gap: 1.25rem;
+  text-align: left;
+}
+
+.jacia-btn:hover {
+  border-color: #9370DB;
+  background: rgba(147, 112, 219, 0.08);
+  transform: translateY(-4px);
+}
+
+.q-icon {
+  width: 45px;
+  height: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(147, 112, 219, 0.2);
+  border-radius: 50%;
+  color: #9370DB;
+  font-weight: 800;
+  flex-shrink: 0;
+  font-size: 1.2rem;
+}
+
+.q-text {
+  color: #d4d4d8;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  flex: 1;
+}
+
+/* ============================================
+   10 FINAL CTA
+   ============================================ */
+.blog-final-cta {
+  padding: 5rem 0 !important;
+  text-align: center;
+  border: none;
+}
+
+.cta-headline {
+  font-size: 1.8rem;
+  color: #38ff14;
+  font-weight: 900;
+  margin: 0 0 1.5rem;
+  line-height: 1.35;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.cta-text {
+  color: #d4d4d8;
+  font-size: 1rem;
+  line-height: 1.7;
+  margin: 0 0 2.5rem;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.cta-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.cta-btn.projects,
+.cta-btn.experience {
+  border-color: #38ff14;
+  color: #38ff14;
+}
+
+.cta-btn.projects:hover,
+.cta-btn.experience:hover {
+  background: rgba(56, 255, 20, 0.12);
+  box-shadow: 0 0 25px rgba(56, 255, 20, 0.3);
+}
+
+/* ============================================
+   ANIMATIONS
+   ============================================ */
+@keyframes neonGlowGreen {
+  0%, 100% {
+    text-shadow: 0 0 15px rgba(56, 255, 20, 0.6), 0 0 30px rgba(56, 255, 20, 0.3);
+  }
+  50% {
+    text-shadow: 0 0 25px rgba(56, 255, 20, 0.9), 0 0 50px rgba(56, 255, 20, 0.5);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ============================================
+   SCROLL REVEAL ANIMATIONS
+   ============================================ */
+.scroll-reveal {
+  opacity: 0;
+  transform: translateY(40px);
+}
+
+.scroll-reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+/* ============================================
+   RESPONSIVE DESIGN
+   ============================================ */
+@media (max-width: 1024px) {
+  .featured-card {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .decision-row {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  section {
+    padding: 4rem 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .wrap {
+    padding: 0 1.25rem;
+  }
+
+  section {
+    padding: 3.5rem 0;
+  }
+
+  .hero-title {
+    font-size: 2.5rem;
+  }
+
+  .section-header {
+    gap: 1rem;
+    margin-bottom: 2.5rem;
+  }
+
+  .section-number {
+    font-size: 1rem;
+  }
+
+  .section-title {
+    font-size: 1.75rem;
+  }
+
+  .notes-grid {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+
+  .note-card.large {
+    grid-column: span 1;
+  }
+
+  .hero-ctas,
+  .cta-buttons {
+    flex-direction: column;
+  }
+
+  .cta-btn {
+    width: 100%;
+  }
+
+  .category-filters {
+    gap: 0.5rem;
+  }
+
+  .filter-btn {
+    padding: 0.6rem 1rem;
+    font-size: 0.75rem;
+  }
+
+  .jacia-questions {
+    grid-template-columns: 1fr;
+  }
+
+  .cta-headline {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .wrap {
+    padding: 0 1rem;
+  }
+
+  section {
+    padding: 2.5rem 0;
+  }
+
+  .hero-title {
+    font-size: 2rem;
+  }
+
+  .section-title {
+    font-size: 1.4rem;
+  }
+
+  .hero-signals {
+    gap: 0.5rem;
+  }
+
+  .signal-badge {
+    padding: 0.5rem 0.9rem;
+    font-size: 0.65rem;
+  }
+
+  .featured-card {
+    padding: 1.5rem;
+  }
+
+  .thought-card,
+  .lesson-card,
+  .quest-card,
+  .jacia-btn {
+    padding: 1.25rem;
+  }
+}

@@ -1,0 +1,183 @@
+.publication-archive-section {
+  padding: 3rem 0;
+  border-bottom: 1px solid rgba(255, 184, 0, 0.1);
+}
+
+.archive-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 2rem;
+  margin: 2rem 0;
+}
+
+.publication-dossier {
+  padding: 2rem;
+  background: rgba(11, 23, 40, 0.6);
+  border: 1px solid rgba(255, 184, 0, 0.3);
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.4s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.publication-dossier.active {
+  border-color: #FFB800;
+  background: rgba(255, 184, 0, 0.1);
+}
+
+.publication-dossier.inactive {
+  opacity: 0.6;
+}
+
+.publication-dossier:hover {
+  border-color: #FFB800;
+  transform: translateY(-4px);
+}
+
+.dossier-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+.dossier-year {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: rgba(255, 184, 0, 0.4);
+}
+
+.dossier-edition {
+  font-size: 0.8rem;
+  color: #FFB800;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.dossier-title-area h3 {
+  color: #FFB800;
+  margin: 0 0 0.5rem;
+  font-size: 1.2rem;
+}
+
+.dossier-type {
+  color: #a8b3c5;
+  font-size: 0.8rem;
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.dossier-expanded {
+  margin-top: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  animation: slideDown 0.3s ease;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    max-height: 0;
+  }
+  to {
+    opacity: 1;
+    max-height: 2000px;
+  }
+}
+
+.expanded-section h4 {
+  color: #00d9ff;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  margin: 0 0 0.5rem;
+  letter-spacing: 0.5px;
+}
+
+.expanded-section p {
+  color: #d4d4d8;
+  margin: 0;
+  line-height: 1.5;
+  font-size: 0.95rem;
+}
+
+.dossier-footer {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(255, 184, 0, 0.2);
+}
+
+.doi-display {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.doi-display code {
+  color: #8a8a8a;
+  font-size: 0.75rem;
+  background: rgba(0, 0, 0, 0.3);
+  padding: 0.4rem 0.6rem;
+  border-radius: 3px;
+  font-family: 'Courier New', monospace;
+  flex: 1;
+  min-width: 150px;
+}
+
+.doi-copy-btn {
+  padding: 0.4rem 0.8rem;
+  background: rgba(255, 184, 0, 0.15);
+  border: 1px solid rgba(255, 184, 0, 0.3);
+  color: #FFB800;
+  font-size: 0.75rem;
+  font-weight: 600;
+  cursor: pointer;
+  border-radius: 3px;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.doi-copy-btn:hover {
+  background: rgba(255, 184, 0, 0.25);
+  border-color: #FFB800;
+}
+
+.ieee-link {
+  color: #FFB800;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: all 0.2s ease;
+}
+
+.ieee-link:hover {
+  text-decoration: underline;
+  color: #FFD700;
+}
+
+.pub-topics {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.topic-tag {
+  padding: 0.3rem 0.7rem;
+  background: rgba(0, 217, 255, 0.1);
+  border: 1px solid rgba(0, 217, 255, 0.3);
+  color: #00d9ff;
+  font-size: 0.75rem;
+  border-radius: 3px;
+}
+
+@media (max-width: 768px) {
+  .archive-container {
+    grid-template-columns: 1fr;
+  }
+}

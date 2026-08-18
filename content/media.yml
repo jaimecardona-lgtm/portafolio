@@ -1,0 +1,606 @@
+media:
+  # PROFILE
+  - id: jaime-cardona-hero
+    entity: jaime-cardona-montero
+    section: home
+    type: photo
+    path: /media/profile/jaime-cardona-hero.webp
+    alt: Jaime Cardona Montero, ingeniero de sistemas y AI researcher
+    caption: Fotografía profesional del autor en entorno técnico
+    aspectRatio: "3/4"
+    width: 900
+    height: 1200
+    status: planned
+    sensitive: false
+    priority: true
+
+  - id: field-panorama
+    entity: jaime-cardona-montero
+    section: home
+    type: photo
+    path: /media/farm/field-panorama.webp
+    alt: Panorámica de campo agrícola
+    caption: Vista de una finca donde Jaime aprendió los ciclos productivos
+    aspectRatio: "16/9"
+    width: 1920
+    height: 1080
+    status: planned
+    sensitive: false
+    priority: true
+
+  # STORY - LA RAÍZ
+  - id: farm-jaime-01
+    entity: story-chapter-1
+    section: historia
+    type: photo
+    path: /media/farm/jaime-finca-01.webp
+    alt: Jaime en la finca con animales
+    caption: Aprendiendo observación en ciclos reales
+    aspectRatio: "16/9"
+    width: 1600
+    height: 900
+    status: planned
+    sensitive: false
+    priority: false
+
+  - id: farm-jaime-02
+    entity: story-chapter-1
+    section: historia
+    type: photo
+    path: /media/farm/jaime-finca-02.webp
+    alt: Actividades de campo
+    caption: El contexto donde se originó la curiosidad técnica
+    aspectRatio: "16/9"
+    width: 1600
+    height: 900
+    status: planned
+    sensitive: false
+    priority: false
+
+  - id: livestock-01
+    entity: story-chapter-1
+    section: historia
+    type: photo
+    path: /media/farm/livestock-01.webp
+    alt: Ganado en operación
+    caption: Datos vivos, observación continua
+    aspectRatio: "16/9"
+    width: 1600
+    height: 900
+    status: planned
+    sensitive: false
+    priority: false
+
+  # STORY - EDUCACIÓN
+  - id: university-building
+    entity: story-chapter-2
+    section: historia
+    type: photo
+    path: /media/education/universidad-san-buenaventura.webp
+    alt: Universidad de San Buenaventura Cali
+    caption: Formación en Ingeniería de Sistemas
+    aspectRatio: "16/9"
+    width: 1600
+    height: 900
+    status: planned
+    sensitive: false
+    priority: false
+
+  - id: graduation-photo
+    entity: story-chapter-2
+    section: historia
+    type: photo
+    path: /media/education/jaime-graduacion.webp
+    alt: Jaime en ceremonia de grado
+    caption: Título profesional en Ingeniería de Sistemas
+    aspectRatio: "16/9"
+    width: 1600
+    height: 900
+    status: planned
+    sensitive: false
+    priority: false
+
+  # PROJECTS - AGROPILOT
+  - id: agropilot-cover
+    entity: agropilot-cm
+    section: proyectos
+    type: screenshot
+    path: /media/projects/agropilot/agropilot-cover.webp
+    alt: Portada de Agropilot CM
+    caption: Ecosistema inteligente para modernizar la ganadería colombiana
+    aspectRatio: "16/9"
+    width: 1600
+    height: 900
+    status: planned
+    sensitive: false
+    priority: false
+
+  - id: agropilot-dashboard
+    entity: agropilot-cm
+    section: proyectos
+    type: screenshot
+    path: /media/projects/agropilot/agropilot-dashboard.webp
+    alt: Dashboard de producción y análisis de Agropilot
+    caption: Vista de tendencias, alertas y recomendaciones
+    aspectRatio: "16/9"
+    width: 1600
+    height: 900
+    status: missing
+    sensitive: false
+    priority: false
+
+  - id: agropilot-herd
+    entity: agropilot-cm
+    section: proyectos
+    type: screenshot
+    path: /media/projects/agropilot/agropilot-herd-management.webp
+    alt: Gestión de hato en Agropilot
+    caption: Registro detallado de cada animal con historial
+    aspectRatio: "16/9"
+    width: 1600
+    height: 900
+    status: missing
+    sensitive: false
+    priority: false
+
+  - id: agropilot-predictions
+    entity: agropilot-cm
+    section: proyectos
+    type: screenshot
+    path: /media/projects/agropilot/agropilot-predictions.webp
+    alt: Predicciones de producción
+    caption: Modelos ML para predicción de leche, peso, salud
+    aspectRatio: "16/9"
+    width: 1600
+    height: 900
+    status: missing
+    sensitive: false
+    priority: false
+
+  - id: agropilot-assistant
+    entity: agropilot-cm
+    section: proyectos
+    type: screenshot
+    path: /media/projects/agropilot/agropilot-assistant.webp
+    alt: Asistente conversacional de Agropilot
+    caption: Chat inteligente con RAG y recomendaciones
+    aspectRatio: "16/9"
+    width: 1600
+    height: 900
+    status: missing
+    sensitive: false
+    priority: false
+
+  - id: agropilot-architecture
+    entity: agropilot-cm
+    section: proyectos
+    type: diagram
+    path: /media/projects/agropilot/agropilot-architecture.webp
+    alt: Diagrama de arquitectura de Agropilot CM
+    caption: 6 capas técnicas integradas
+    aspectRatio: "16/9"
+    width: 1600
+    height: 900
+    status: missing
+    sensitive: false
+    priority: false
+
+  # PROJECTS - INTERMUNICONNECT
+  - id: intermuniconnect-cover
+    entity: intermuniconnect
+    section: proyectos
+    type: screenshot
+    path: /media/projects/intermuniconnect/intermuniconnect-cover.webp
+    alt: Portada de InterMuniConnect
+    caption: Plataforma de movilidad intermunicipal y urbana
+    aspectRatio: "16/9"
+    width: 1600
+    height: 900
+    status: missing
+    sensitive: false
+    priority: false
+
+  - id: intermuniconnect-registration
+    entity: intermuniconnect
+    section: proyectos
+    type: screenshot
+    path: /media/projects/intermuniconnect/intermuniconnect-registration.webp
+    alt: Registro de usuario en InterMuniConnect
+    caption: Onboarding simplificado para pasajeros
+    aspectRatio: "16/9"
+    width: 1600
+    height: 900
+    status: missing
+    sensitive: false
+    priority: false
+
+  - id: intermuniconnect-map
+    entity: intermuniconnect
+    section: proyectos
+    type: screenshot
+    path: /media/projects/intermuniconnect/intermuniconnect-map.webp
+    alt: Mapa de rutas en InterMuniConnect
+    caption: Visualización de viajes disponibles
+    aspectRatio: "16/9"
+    width: 1600
+    height: 900
+    status: missing
+    sensitive: false
+    priority: false
+
+  # PROJECTS - FACTURAOPS
+  - id: facturaops-cover
+    entity: facturaops
+    section: proyectos
+    type: screenshot
+    path: /media/projects/facturaops/facturaops-cover.webp
+    alt: Portada de FacturaOps
+    caption: Automatización de facturación y gestión DIAN
+    aspectRatio: "16/9"
+    width: 1600
+    height: 900
+    status: missing
+    sensitive: false
+    priority: false
+
+  - id: facturaops-dashboard
+    entity: facturaops
+    section: proyectos
+    type: screenshot
+    path: /media/projects/facturaops/facturaops-dashboard.webp
+    alt: Dashboard de FacturaOps
+    caption: Vista de facturas, estatus y métricas
+    aspectRatio: "16/9"
+    width: 1600
+    height: 900
+    status: missing
+    sensitive: false
+    priority: false
+
+  - id: facturaops-chat
+    entity: facturaops
+    section: proyectos
+    type: screenshot
+    path: /media/projects/facturaops/facturaops-chat.webp
+    alt: Asistente conversacional de FacturaOps
+    caption: Preguntas sobre facturas y procedimientos
+    aspectRatio: "16/9"
+    width: 1600
+    height: 900
+    status: missing
+    sensitive: false
+    priority: false
+
+  # PROJECTS - ELITE BEAUTY AGENT
+  - id: elite-beauty-cover
+    entity: elite-beauty-agent
+    section: proyectos
+    type: screenshot
+    path: /media/projects/elite-beauty/elite-beauty-cover.webp
+    alt: Portada de Elite Beauty Agent
+    caption: Agente autónomo para ventas de belleza
+    aspectRatio: "16/9"
+    width: 1600
+    height: 900
+    status: missing
+    sensitive: false
+    priority: false
+
+  - id: elite-beauty-whatsapp
+    entity: elite-beauty-agent
+    section: proyectos
+    type: screenshot
+    path: /media/projects/elite-beauty/elite-beauty-whatsapp.webp
+    alt: Chat WhatsApp con Elite Beauty Agent
+    caption: Conversaciones autónomas y calificadas
+    aspectRatio: "9/16"
+    width: 540
+    height: 960
+    status: missing
+    sensitive: false
+    priority: false
+
+  - id: elite-beauty-voice
+    entity: elite-beauty-agent
+    section: proyectos
+    type: screenshot
+    path: /media/projects/elite-beauty/elite-beauty-voice.webp
+    alt: Llamadas de voz en Elite Beauty Agent
+    caption: Confirmación y cierre con Twilio
+    aspectRatio: "16/9"
+    width: 1600
+    height: 900
+    status: missing
+    sensitive: false
+    priority: false
+
+  # PROJECTS - VOZ ESTRATÉGICA
+  - id: voz-estrategica-cover
+    entity: voz-estrategica
+    section: proyectos
+    type: screenshot
+    path: /media/projects/voz-estrategica/voz-estrategica-cover.webp
+    alt: Portada de Voz Estratégica
+    caption: Plataforma de consultoría estratégica
+    aspectRatio: "16/9"
+    width: 1600
+    height: 900
+    status: missing
+    sensitive: false
+    priority: false
+
+  - id: voz-estrategica-home
+    entity: voz-estrategica
+    section: proyectos
+    type: screenshot
+    path: /media/projects/voz-estrategica/voz-estrategica-home.webp
+    alt: Página de inicio de Voz Estratégica
+    caption: Landing y navegación principal
+    aspectRatio: "16/9"
+    width: 1600
+    height: 900
+    status: missing
+    sensitive: false
+    priority: false
+
+  # PROJECTS - TANIA PORTFOLIO
+  - id: tania-portfolio-cover
+    entity: tania-portfolio
+    section: proyectos
+    type: screenshot
+    path: /media/projects/tania-portfolio/tania-portfolio-cover.webp
+    alt: Portada del portafolio de Tania
+    caption: Experiencia interactiva y storytelling
+    aspectRatio: "16/9"
+    width: 1600
+    height: 900
+    status: missing
+    sensitive: false
+    priority: false
+
+  - id: tania-carousel
+    entity: tania-portfolio
+    section: proyectos
+    type: screenshot
+    path: /media/projects/tania-portfolio/tania-carousel.webp
+    alt: Carrusel 3D en portafolio de Tania
+    caption: Galería cinematográfica de proyectos
+    aspectRatio: "16/9"
+    width: 1600
+    height: 900
+    status: missing
+    sensitive: false
+    priority: false
+
+  # EXPERIENCE - RCKT
+  - id: rckt-role
+    entity: rckt
+    section: experiencia
+    type: screenshot
+    path: /media/experience/rckt/rckt-role.webp
+    alt: Rol de Jaime en RCKT
+    caption: AI & Data Engineer, arquitectura de sistemas
+    aspectRatio: "16/9"
+    width: 1600
+    height: 900
+    status: missing
+    sensitive: false
+    priority: false
+
+  - id: rckt-ecosystem
+    entity: rckt
+    section: experiencia
+    type: diagram
+    path: /media/experience/rckt/rckt-ecosystem.webp
+    alt: Ecosistema de productos AI en RCKT
+    caption: Elite Beauty, Voz Estratégica, automatización
+    aspectRatio: "16/9"
+    width: 1600
+    height: 900
+    status: missing
+    sensitive: false
+    priority: false
+
+  # EXPERIENCE - DIAN
+  - id: dian-inventory
+    entity: dian
+    section: experiencia
+    type: screenshot
+    path: /media/experience/dian/dian-inventory-system.webp
+    alt: Sistema de inventario en DIAN
+    caption: Gestión de equipos y préstamos
+    aspectRatio: "16/9"
+    width: 1600
+    height: 900
+    status: missing
+    sensitive: false
+    priority: false
+    restricted: true
+
+  - id: dian-roles
+    entity: dian
+    section: experiencia
+    type: screenshot
+    path: /media/experience/dian/dian-role-system.webp
+    alt: Sistema de roles en DIAN
+    caption: Gestión de servidores públicos
+    aspectRatio: "16/9"
+    width: 1600
+    height: 900
+    status: missing
+    sensitive: false
+    priority: false
+    restricted: true
+
+  # RESEARCH - IEEE
+  - id: ieee-agrodiversity-cover
+    entity: ieee-agrodiversity
+    section: investigacion
+    type: publication
+    path: /media/research/ieee-agrodiversity.webp
+    alt: Portada del paper IEEE sobre AgroDiversity
+    caption: CONCAPAN 2025 - Arquitecturas híbridas para IA agrícola
+    aspectRatio: "8.5/11"
+    width: 850
+    height: 1100
+    status: missing
+    sensitive: false
+    priority: false
+
+  - id: ieee-environmental-ai
+    entity: ieee-environmental-ai
+    section: investigacion
+    type: publication
+    path: /media/research/ieee-environmental-ai.webp
+    alt: Portada del paper IEEE sobre IA ambiental
+    caption: CONCAPAN 2025 - Dimensiones ambientales de la IA
+    aspectRatio: "8.5/11"
+    width: 850
+    height: 1100
+    status: missing
+    sensitive: false
+    priority: false
+
+  # CREDENCIALES
+  - id: oracle-ai-agent-studio
+    entity: certifications
+    section: credenciales
+    type: credential
+    path: /media/certifications/oracle-ai-agent-studio.webp
+    alt: Certificación Oracle AI Agent Studio
+    caption: Construcción de agentes autónomos
+    aspectRatio: "4/3"
+    width: 1024
+    height: 768
+    status: missing
+    sensitive: false
+    priority: false
+
+  - id: oracle-oci-ai-foundations
+    entity: certifications
+    section: credenciales
+    type: credential
+    path: /media/certifications/oracle-oci-ai-foundations.webp
+    alt: Certificación Oracle OCI AI Foundations
+    caption: Fundamentos de IA en OCI
+    aspectRatio: "4/3"
+    width: 1024
+    height: 768
+    status: missing
+    sensitive: false
+    priority: false
+
+  - id: aws-ml-foundations
+    entity: certifications
+    section: credenciales
+    type: credential
+    path: /media/certifications/aws-ml-foundations.webp
+    alt: Certificación AWS Machine Learning Foundations
+    caption: Aprendizaje automático en AWS
+    aspectRatio: "4/3"
+    width: 1024
+    height: 768
+    status: missing
+    sensitive: false
+    priority: false
+
+  # RECOGNITION - CONCAPAN 2026
+  - id: concapan-2026-tpc-invitation
+    entity: jaime-cardona-montero
+    section: reconocimiento
+    type: credential
+    path: /media/research/concapan-2026-tpc.webp
+    alt: Invitación como revisor TPC en CONCAPAN 2026
+    caption: "IEEE CONCAPAN 2026: Technical Program Committee Reviewer"
+    aspectRatio: "8.5/11"
+    width: 850
+    height: 1100
+    status: planned
+    sensitive: false
+    priority: true
+
+  # HACKATHONS
+  - id: colombia-5-0
+    entity: hackathons
+    section: hackathones
+    type: credential
+    path: /media/hackathons/colombia-5-0.webp
+    alt: Hackathon Colombia 5.0
+    caption: Competencia de innovación y emprendimiento
+    aspectRatio: "4/3"
+    width: 1024
+    height: 768
+    status: missing
+    sensitive: false
+    priority: false
+
+  - id: facturaops-hackathon
+    entity: hackathons
+    section: hackathones
+    type: credential
+    path: /media/hackathons/facturaops-funnelchat.webp
+    alt: FacturaOps ganador en hackathon FunnelChat
+    caption: Proyecto ganador de automatización de facturación
+    aspectRatio: "4/3"
+    width: 1024
+    height: 768
+    status: missing
+    sensitive: false
+    priority: false
+
+  # DIAGRAMS
+  - id: agropilot-architecture-diagram
+    entity: agropilot-cm
+    section: diagramas
+    type: diagram
+    path: /media/diagrams/agropilot-architecture.svg
+    alt: Diagrama interactivo de arquitectura de Agropilot CM
+    caption: 6 capas técnicas integradas
+    aspectRatio: "16/9"
+    width: 1600
+    height: 900
+    status: missing
+    sensitive: false
+    priority: false
+
+  - id: intermuniconnect-architecture-diagram
+    entity: intermuniconnect
+    section: diagramas
+    type: diagram
+    path: /media/diagrams/intermuniconnect-architecture.svg
+    alt: Diagrama interactivo de arquitectura de InterMuniConnect
+    caption: Flujo de reserva y tarificación
+    aspectRatio: "16/9"
+    width: 1600
+    height: 900
+    status: missing
+    sensitive: false
+    priority: false
+
+  - id: elite-beauty-whatsapp-flow
+    entity: elite-beauty-agent
+    section: diagramas
+    type: diagram
+    path: /media/diagrams/elite-beauty-whatsapp-flow.svg
+    alt: Diagrama de flujo WhatsApp en Elite Beauty
+    caption: Conversación autónoma a llamada confirmada
+    aspectRatio: "16/9"
+    width: 1600
+    height: 900
+    status: missing
+    sensitive: false
+    priority: false
+
+  - id: jac-ia-retrieval-flow
+    entity: jac-ia
+    section: diagramas
+    type: diagram
+    path: /media/diagrams/jac-ia-retrieval.svg
+    alt: Diagrama de recuperación de JAC-IA
+    caption: Pregunta → Contexto → Modelo → Respuesta
+    aspectRatio: "16/9"
+    width: 1600
+    height: 900
+    status: missing
+    sensitive: false
+    priority: false

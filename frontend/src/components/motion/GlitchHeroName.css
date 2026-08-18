@@ -1,0 +1,101 @@
+.glitch-hero-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.glitch-glass-effect {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.4;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.glitch-name {
+  position: relative;
+  z-index: 2;
+  font-size: 2.8rem;
+  font-weight: 900;
+  letter-spacing: -1px;
+  line-height: 1.2;
+  text-transform: uppercase;
+  color: #38ff14;
+  text-shadow: 0 0 30px rgba(56, 255, 20, 0.8), 0 0 60px rgba(56, 255, 20, 0.4);
+}
+
+.glitch-letter {
+  display: inline-block;
+  min-width: 0.2em;
+}
+
+.glitch-subtitle {
+  position: relative;
+  z-index: 2;
+  margin-top: 1.5rem;
+  font-size: 1.2rem;
+  color: #d4d4d8;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.glitch-energy-burst {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(56, 255, 20, 0.3) 0%, transparent 70%);
+  border-radius: 50%;
+  z-index: 0;
+  pointer-events: none;
+}
+
+@media (max-width: 768px) {
+  .glitch-name {
+    font-size: 2.5rem;
+  }
+
+  .glitch-subtitle {
+    font-size: 0.95rem;
+  }
+
+  .glitch-energy-burst {
+    width: 300px;
+    height: 300px;
+  }
+}
+
+@media (max-width: 480px) {
+  .glitch-name {
+    font-size: 1.8rem;
+  }
+
+  .glitch-subtitle {
+    font-size: 0.8rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .glitch-name,
+  .glitch-glass-effect,
+  .glitch-energy-burst {
+    animation: none;
+  }
+
+  .glitch-letter {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+}

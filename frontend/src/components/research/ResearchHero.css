@@ -1,0 +1,151 @@
+.research-hero {
+  padding: 4rem 0 3rem;
+  border-bottom: 1px solid rgba(255, 184, 0, 0.2);
+}
+
+.hero-eyebrow {
+  display: block;
+  font-family: 'Courier New', monospace;
+  font-size: 0.875rem;
+  letter-spacing: 1.5px;
+  color: #FFB800;
+  font-weight: bold;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.hero-title {
+  font-size: 3.5rem;
+  font-weight: 900;
+  color: #FFB800;
+  letter-spacing: -1px;
+  text-shadow: 0 0 20px rgba(255, 184, 0, 0.6);
+  margin: 0 0 2rem;
+  animation: neonGlowAmber 2s ease-in-out infinite;
+}
+
+.hero-main-text {
+  font-size: 1.2rem;
+  color: #d4d4d8;
+  line-height: 1.7;
+  margin: 0 0 1.5rem;
+  max-width: 900px;
+  font-style: italic;
+}
+
+.hero-subtext {
+  color: #a8b3c5;
+  font-size: 1rem;
+  line-height: 1.6;
+  max-width: 900px;
+  margin: 0 0 2.5rem;
+}
+
+.hero-signals {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1.5rem;
+  margin: 2.5rem 0;
+}
+
+.signal {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  background: rgba(255, 184, 0, 0.05);
+  border: 1px solid rgba(255, 184, 0, 0.2);
+  border-radius: 8px;
+  text-align: center;
+}
+
+.signal-number {
+  font-size: 2rem;
+  font-weight: 900;
+  color: #FFB800;
+  line-height: 1;
+}
+
+.signal-label {
+  font-size: 0.8rem;
+  color: #a8b3c5;
+  margin-top: 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-weight: 600;
+}
+
+.hero-ctas {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-top: 2rem;
+}
+
+.cta-button {
+  padding: 1rem 2rem;
+  border: none;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.cta-button.explore {
+  background: linear-gradient(135deg, rgba(255, 184, 0, 0.2), rgba(255, 184, 0, 0.1));
+  border: 2px solid #FFB800;
+  color: #FFB800;
+}
+
+.cta-button.explore:hover {
+  background: rgba(255, 184, 0, 0.2);
+  box-shadow: 0 0 20px rgba(255, 184, 0, 0.3);
+  transform: translateY(-2px);
+}
+
+.cta-button.chat {
+  background: linear-gradient(135deg, rgba(147, 112, 219, 0.2), rgba(0, 217, 255, 0.1));
+  border: 2px solid #9370DB;
+  color: #9370DB;
+}
+
+.cta-button.chat:hover {
+  background: rgba(147, 112, 219, 0.2);
+  box-shadow: 0 0 20px rgba(147, 112, 219, 0.3);
+  transform: translateY(-2px);
+}
+
+@keyframes neonGlowAmber {
+  0%, 100% {
+    text-shadow: 0 0 20px rgba(255, 184, 0, 0.6);
+  }
+  50% {
+    text-shadow: 0 0 30px rgba(255, 184, 0, 0.9);
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-title {
+    font-size: 2.5rem;
+  }
+
+  .hero-main-text {
+    font-size: 1rem;
+  }
+
+  .hero-signals {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .hero-ctas {
+    flex-direction: column;
+  }
+
+  .cta-button {
+    width: 100%;
+  }
+}
