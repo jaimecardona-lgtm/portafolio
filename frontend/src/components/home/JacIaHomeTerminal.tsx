@@ -10,7 +10,7 @@ export default function JacIaHomeTerminal({ onOpenChat }: Props) {
     <section className="jac-ia-terminal">
       <div className="wrap">
         <div className="terminal-header">
-          <span className="section-number">07</span>
+          <span className="section-number">06</span>
           <h2 className="section-title">ASK THE SYSTEM</h2>
         </div>
 

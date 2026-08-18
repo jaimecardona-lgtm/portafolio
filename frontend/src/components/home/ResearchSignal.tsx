@@ -5,7 +5,7 @@ export default function ResearchSignal() {
     <section className="research-signal">
       <div className="wrap">
         <div className="signal-header">
-          <span className="section-number">05</span>
+          <span className="section-number">04</span>
           <h2 className="section-title">RESEARCH & REVIEW</h2>
         </div>
 

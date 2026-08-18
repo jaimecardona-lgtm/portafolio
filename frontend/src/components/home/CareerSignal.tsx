@@ -10,7 +10,7 @@ export default function CareerSignal() {
     <section className="career-signal">
       <div className="wrap">
         <div className="signal-header">
-          <span className="section-number">04</span>
+          <span className="section-number">03</span>
           <h2 className="section-title">FIELD EXPERIENCE</h2>
         </div>
 

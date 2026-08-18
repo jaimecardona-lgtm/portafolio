@@ -7,7 +7,6 @@ import OriginNode from '../components/home/OriginNode'
 import FarmGallery from '../components/home/FarmGallery'
 import HackathonsGallery from '../components/home/HackathonsGallery'
 import WorldGatewayGrid from '../components/home/WorldGatewayGrid'
-import FeaturedSystems from '../components/home/FeaturedSystems'
 import CareerSignal from '../components/home/CareerSignal'
 import ResearchSignal from '../components/home/ResearchSignal'
 import HowIBuild from '../components/home/HowIBuild'
@@ -64,10 +63,6 @@ export default function Home() {
 
       <section className="scroll-reveal">
         <WorldGatewayGrid />
-      </section>
-
-      <section className="scroll-reveal">
-        <FeaturedSystems />
       </section>
 
       <section className="scroll-reveal">

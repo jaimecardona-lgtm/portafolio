@@ -10,7 +10,7 @@ export default function HowIBuild() {
     <section className="how-i-build">
       <div className="wrap">
         <div className="build-header">
-          <span className="section-number">06</span>
+          <span className="section-number">05</span>
           <h2 className="section-title">HOW I THINK</h2>
           <p className="section-subtitle">
             No empiezo preguntando qué tecnología usar. Empiezo preguntando qué problema necesita resolverse.
