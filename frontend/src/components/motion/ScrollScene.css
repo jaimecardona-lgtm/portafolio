@@ -1,0 +1,26 @@
+.scroll-scene {
+  will-change: transform, opacity, filter;
+}
+
+.scroll-scene[data-scene-state="before"],
+.scroll-scene[data-scene-state="after"] {
+  pointer-events: none;
+}
+
+.scroll-scene[data-scene-state="active"] {
+  pointer-events: auto;
+}
+
+.scroll-scene[data-scene-state="entering"],
+.scroll-scene[data-scene-state="leaving"] {
+  pointer-events: auto;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .scroll-scene {
+    filter: none !important;
+    transform: none !important;
+    opacity: 1 !important;
+    transition: none !important;
+  }
+}

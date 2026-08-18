@@ -351,39 +351,6 @@ projects:
       Proteger arquitectura. Prevenir operaciones destructivas.
       Sincronizar flujos de trabajo. Mantener standards técnicos.
 
-  - id: portafolio-tania
-    name: Portafolio de Tania
-    tagline: Experiencia interactiva y narrativa
-    type: Collaborative Project
-    status: Production
-    featured: false
-    priority: 7
-
-    overview: |
-      Portafolio interactivo con storytelling visual, cursor personalizado,
-      reveal animations, tilt 3D y carruseles avanzados.
-
-    technical_showcase:
-      - React component architecture
-      - Custom cursor tracking
-      - Intersection Observer animations
-      - 3D perspective transforms
-      - Advanced carousel (ExoticCarousel)
-      - Responsive design
-      - Performance optimized
-
-    design_patterns:
-      - Reveal on scroll
-      - Tilt on hover
-      - Custom cursor
-      - 360° carousel
-      - Lightbox gallery
-      - Narrative flow
-
-    role_of_jaime: |
-      Desarrollo técnico, optimización de componentes,
-      arquitectura escalable, performance y accesibilidad.
-
   - id: agrodiversity
     name: AgroDiversity
     tagline: Investigación en diversificación agrícola y IA

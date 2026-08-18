@@ -182,7 +182,7 @@ story:
 
     - id: 09-ai-evaluation
       title: "09 — Evaluar inteligencia artificial"
-      subtitle: Alignerr: criterio sobre soluciones
+      subtitle: "Alignerr: criterio sobre soluciones"
       narrative: |
         En Alignerr evalúo respuestas de modelos de IA.
 

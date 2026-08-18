@@ -86,3 +86,28 @@ future_research_directions:
   - Federated Learning in Agriculture
   - Edge AI for Rural Applications
   - Responsible AI Frameworks
+
+academic_roles:
+  - id: concapan-2026-tpc
+    role: Technical Program Committee Reviewer
+    organization: IEEE CONCAPAN 2026
+    event: "IEEE 44th Central America and Panama Convention (CONCAPAN XLIV)"
+    year: 2026
+    status: Active
+    topics:
+      - Artificial Intelligence
+      - Agricultural Technology
+      - Data Engineering
+      - Hybrid Systems
+      - Sustainable Computing
+    responsibilities:
+      - Review 3-4 submissions within areas of expertise
+      - Provide constructive, substantive feedback
+      - Contribute to technical program quality
+    announcement_date: "2026-08-16"
+    acceptance_url: "https://edas.info/Tyn.php?tpc=1001940169"
+    description: |
+      Seleccionado como revisor TPC (Technical Program Committee) para CONCAPAN 2026.
+      Responsable de revisar y evaluar trabajos de investigación en áreas de inteligencia artificial,
+      tecnología agrícola y sistemas de datos. Reconocimiento de la contribución académica y técnica
+      en la región de Centroamérica y Panamá.

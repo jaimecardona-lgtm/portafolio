@@ -48,29 +48,69 @@ export default function JacChat() {
     setIsLoading(true)
 
     try {
-      const response = await fetch('http://localhost:8000/api/chat', {
+      const payload = {
+        message: text,
+        session_id: `session-${Date.now()}`,
+        history: messages.map(msg => ({
+          role: msg.role,
+          content: msg.content,
+        })),
+        route: window.location.pathname,
+        language: 'es',
+      }
+
+      console.log('Chat request payload:', payload)
+
+      const response = await fetch('/api/chat', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ message: text }),
+        body: JSON.stringify(payload),
       })
 
-      if (!response.ok) throw new Error('Chat error')
+      if (!response.ok) {
+        const errorData = await response.json().catch(() => ({}))
+        console.error('Chat error response:', errorData)
+        const detail = errorData?.detail ?? errorData?.message ?? `Error HTTP ${response.status}`
+        throw new Error(typeof detail === 'string' ? detail : JSON.stringify(detail))
+      }
 
       const data = await response.json()
       const assistantMessage: Message = {
         id: `msg-${Date.now()}`,
         role: 'assistant',
-        content: data.response,
+        content: data.answer || 'No hay respuesta disponible',
         timestamp: Date.now(),
       }
 
       setMessages(prev => [...prev, assistantMessage])
     } catch (error) {
       console.error('Chat error:', error)
+
+      const fallbackResponses: {[key: string]: string} = {
+        'agropilot': 'Agropilot CM es un ecosistema inteligente para gestión agropecuaria que Jaime desarrolló. Integra React frontend, FastAPI backend, modelos ML (regresión, árboles, LSTM, Random Forest), RAG con ChromaDB, y un asistente conversacional con OpenRouter. Maneja producción lechera, silvopastoril, porcicultura, predicción individual y masiva, análisis de costos y alertas de anomalías.',
+        'rckt': 'Jaime trabaja en RCKT como AI & Data Engineer. Construye soluciones AI-first: Elite Beauty Agent (WhatsApp + voz), Voz Estratégica (producto digital), arquitecturas de agentes. Es responsable de backend, flujos de datos, RAG, integración de LLMs y decisiones técnicas transversales.',
+        'alignerr': 'En Alignerr, Jaime evalúa respuestas de modelos de IA y código. Revisa repositorios, compara soluciones, analiza prompts y transcripts, verifica correctitud y mantenibilidad. Esto lo entrenó en evaluación rigurosa de calidad técnica.',
+        'concapan': 'Jaime fue aceptado como TPC Reviewer en CONCAPAN XLIV 2026. El rol requiere revisar entre 3 y 4 trabajos de investigación, declarar conflictos de interés y entregar retroalimentación técnica constructiva. Las revisiones vencen el 13 de septiembre de 2026.',
+        'experiencia': 'Jaime tiene experiencia en: DIAN (sistemas públicos), Opportunity Hound (datos e IA), RCKT (AI & Data Engineer), Alignerr (evaluación técnica). Total: contextos diversos desde gobierno hasta startups de IA.',
+        'ieee': 'Jaime publicó en IEEE CONCAPAN 2025: "Hybrid AI Architecture for Agricultural Diversification" (DOI 10.1109/CONCAPAN66820.2025.11512437) y "Environmental Dimensions of Artificial Intelligence" (DOI 10.1109/CONCAPAN66820.2025.11512472).',
+        'rag': 'RAG: Retrieval Augmented Generation. Jaime lo usa para combinar búsqueda de información (embeddings, vector search) con generación de LLMs. Lo implementó en Agropilot CM (ChromaDB), Elite Beauty Agent (Supabase pgvector), y arquitecturas de agentes conversacionales.',
+        'default': 'Soy JAC-IA, la guía inteligente del portafolio de Jaime Andres Cardona Montero. Puedo ayudarte a explorar su trayectoria, proyectos, publicaciones, experiencia profesional, arquitecturas y forma de construir. Pregunta sobre Agropilot, RCKT, Alignerr, IEEE, RAG, o cualquier aspecto técnico.',
+      }
+
+      let response = fallbackResponses['default']
+      const lowerText = text.toLowerCase()
+
+      for (const [key, value] of Object.entries(fallbackResponses)) {
+        if (key !== 'default' && lowerText.includes(key)) {
+          response = value
+          break
+        }
+      }
+
       const fallbackMessage: Message = {
         id: `msg-${Date.now()}`,
         role: 'assistant',
-        content: 'Lo siento, en este momento no puedo procesar tu pregunta. Intenta de nuevo más tarde.',
+        content: response,
         timestamp: Date.now(),
       }
       setMessages(prev => [...prev, fallbackMessage])
@@ -118,9 +158,9 @@ export default function JacChat() {
       <div className="jac-chat-messages">
         {messages.length === 0 ? (
           <div className="jac-welcome">
-            <h4>Bienvenido</h4>
-            <p>Soy JAC-IA, el asistente conversacional de Jaime Cardona.</p>
-            <p>Puedo responder sobre su vida, proyectos, experiencia y visión.</p>
+            <h4>Bienvenido a JAC-IA</h4>
+            <p>Soy JAC-IA, guía inteligente del portafolio de Jaime Andres Cardona Montero.</p>
+            <p>Puedo responder sobre su trayectoria, proyectos, publicaciones, experiencia y forma de construir.</p>
             <div className="jac-suggested">
               <p className="jac-label-small">Preguntas sugeridas:</p>
               <div className="jac-buttons">

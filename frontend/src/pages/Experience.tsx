@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import {
   careerStages,
   dianuSystems,
@@ -18,10 +18,29 @@ import TeamOperatingSystem from '../components/experience/TeamOperatingSystem'
 import CareerEvolution from '../components/experience/CareerEvolution'
 import ExperienceJacIa from '../components/experience/ExperienceJacIa'
 import FinalExperienceCTA from '../components/experience/FinalExperienceCTA'
+import '../styles/scroll-reveal.css'
 import './Experience.css'
 
 export default function Experience() {
   const [activeMissionId, setActiveMissionId] = useState<string>('dian')
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('active')
+          observer.unobserve(entry.target)
+        }
+      },
+      { threshold: 0.1, rootMargin: '0px 0px -50px 0px' }
+    )
+
+    document.querySelectorAll('.scroll-reveal').forEach(el => {
+      observer.observe(el)
+    })
+
+    return () => observer.disconnect()
+  }, [])
 
   const activeMission = careerStages.find(stage => stage.id === activeMissionId)
 
@@ -36,46 +55,64 @@ export default function Experience() {
   return (
     <div className="page experience-page">
       <div className="wrap">
-        <ExperienceHero />
+        <section className="scroll-reveal">
+          <ExperienceHero />
+        </section>
 
-        <CareerTimeline
-          stages={careerStages}
-          activeId={activeMissionId}
-          onSelectMission={setActiveMissionId}
-        />
+        <section className="scroll-reveal">
+          <CareerTimeline
+            stages={careerStages}
+            activeId={activeMissionId}
+            onSelectMission={setActiveMissionId}
+          />
+        </section>
 
         {activeMission && (
-          <MissionDossier
-            mission={activeMission}
-            dianSystems={activeMission.id === 'dian' ? dianuSystems : undefined}
-            oppyTabs={activeMission.id === 'oppyhound' ? opportunityHoundTabs : undefined}
-            rcktSystems={activeMission.id === 'rckt' ? rcktSystems : undefined}
-            evaluationCriteria={activeMission.id === 'alignerr' ? evaluationCriteria : undefined}
-          />
+          <section className="scroll-reveal">
+            <MissionDossier
+              mission={activeMission}
+              dianSystems={activeMission.id === 'dian' ? dianuSystems : undefined}
+              oppyTabs={activeMission.id === 'oppyhound' ? opportunityHoundTabs : undefined}
+              rcktSystems={activeMission.id === 'rckt' ? rcktSystems : undefined}
+              evaluationCriteria={activeMission.id === 'alignerr' ? evaluationCriteria : undefined}
+            />
+          </section>
         )}
 
-        <EngineeringInReality />
+        <section className="scroll-reveal">
+          <EngineeringInReality />
+        </section>
 
-        <TechnicalJudgment
-          dianSystems={dianuSystems}
-          rcktSystems={rcktSystems}
-          evaluationCriteria={evaluationCriteria}
-        />
+        <section className="scroll-reveal">
+          <TechnicalJudgment
+            dianSystems={dianuSystems}
+            rcktSystems={rcktSystems}
+            evaluationCriteria={evaluationCriteria}
+          />
+        </section>
 
-        <TeamOperatingSystem behaviors={teamBehaviors} />
+        <section className="scroll-reveal">
+          <TeamOperatingSystem behaviors={teamBehaviors} />
+        </section>
 
-        <CareerEvolution stages={careerEvolutionStages} />
+        <section className="scroll-reveal">
+          <CareerEvolution stages={careerEvolutionStages} />
+        </section>
 
-        <ExperienceJacIa
-          questions={experienceQuestions}
-          onOpenChat={handleOpenChat}
-        />
+        <section className="scroll-reveal">
+          <ExperienceJacIa
+            questions={experienceQuestions}
+            onOpenChat={handleOpenChat}
+          />
+        </section>
 
-        <FinalExperienceCTA
-          onNavigateProjects={() => handleNavigate('proyectos')}
-          onNavigateResearch={() => handleNavigate('investigacion')}
-          onOpenChat={handleOpenChat}
-        />
+        <section className="scroll-reveal">
+          <FinalExperienceCTA
+            onNavigateProjects={() => handleNavigate('proyectos')}
+            onNavigateResearch={() => handleNavigate('investigacion')}
+            onOpenChat={handleOpenChat}
+          />
+        </section>
       </div>
     </div>
   )

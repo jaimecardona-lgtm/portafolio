@@ -1,147 +1,112 @@
-import './Pages.css'
+import { useState, useMemo, useEffect } from 'react'
+import '../styles/scroll-reveal.css'
 import './Projects.css'
+import ProjectsHero from '../components/projects/ProjectsHero'
+import ProjectFilterMatrix from '../components/projects/ProjectFilterMatrix'
+import FlagshipProject from '../components/projects/FlagshipProject'
+import ProjectUniverse from '../components/projects/ProjectUniverse'
+import ProjectExplorer from '../components/projects/ProjectExplorer'
+import BuildPatterns from '../components/projects/BuildPatterns'
+import OtherBuilds from '../components/projects/OtherBuilds'
+import { projects, ProjectCategory } from '../data/projects'
 
-const projects = [
-  {
-    id: 'agropilot',
-    name: 'Agropilot CM',
-    tagline: 'Ecosistema inteligente para modernizar la gestión agropecuaria',
-    description: 'Plataforma integral con IA, predicción y análisis. Producción lechera, silvopastoral, porcicultura.',
-    featured: true,
-    tags: ['AI', 'Full-Stack', 'RAG', 'Production'],
-  },
-  {
-    id: 'elite-beauty',
-    name: 'Elite Beauty Agent',
-    tagline: 'Agente omnicanal para negocio de belleza',
-    description: 'Conversación vía WhatsApp y voz. Clasificación de leads. RAG con contexto de cliente.',
-    featured: true,
-    tags: ['AI', 'Conversational', 'Production'],
-  },
-  {
-    id: 'intermuni',
-    name: 'InterMuniConnect',
-    tagline: 'Plataforma de carpooling intermunicipal',
-    description: 'Conexión de pasajeros y conductores entre municipios. Pagos, calificaciones, mapas.',
-    featured: true,
-    tags: ['Full-Stack', 'Mobile', 'Development'],
-  },
-  {
-    id: 'factura-ops',
-    name: 'FacturaOps',
-    tagline: 'Facturación electrónica con IA',
-    description: 'Integración DIAN. Agente conversacional. Reportes y auditoría.',
-    featured: false,
-    tags: ['Backend', 'IA', 'MVP'],
-  },
-  {
-    id: 'bertolli',
-    name: 'Bertolli Pro 900',
-    tagline: 'Landing premium con arquitectura escalable',
-    description: 'Accesibilidad WCAG AA. FAQs interactivo. Evolución a FastAPI + RAG.',
-    featured: false,
-    tags: ['Frontend', 'Proof of Concept'],
-  },
-  {
-    id: 'voz-estrategica',
-    name: 'Voz Estratégica',
-    tagline: 'Producto digital con integración IA',
-    description: 'React + Supabase. Autenticación, pagos, analítica. Dentro del ecosistema RCKT.',
-    featured: false,
-    tags: ['Frontend', 'Production', 'Product'],
-  },
-  {
-    id: 'tania-portfolio',
-    name: 'Portafolio de Tania',
-    tagline: 'Experiencia interactiva y narrativa',
-    description: 'Cursor personalizado, reveal animations, tilt 3D, carruseles avanzados.',
-    featured: false,
-    tags: ['Frontend', 'Design'],
-  },
-  {
-    id: 'agrodiversity',
-    name: 'AgroDiversity',
-    tagline: 'Investigación en IA y agricultura',
-    description: 'Arquitecturas híbridas. Deep Learning + Expert Systems. Publicación IEEE.',
-    featured: false,
-    tags: ['Research', 'Academic'],
-  },
-]
+type FilterKey = 'all' | ProjectCategory
 
 export default function Projects() {
-  const featured = projects.filter(p => p.featured)
-  const others = projects.filter(p => !p.featured)
+  const [activeFilter, setActiveFilter] = useState<FilterKey>('all')
+  const [activeProjectId, setActiveProjectId] = useState<string>(projects[0].id)
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('active')
+          observer.unobserve(entry.target)
+        }
+      },
+      { threshold: 0.1, rootMargin: '0px 0px -50px 0px' }
+    )
+
+    document.querySelectorAll('.scroll-reveal').forEach(el => {
+      observer.observe(el)
+    })
+
+    return () => observer.disconnect()
+  }, [])
+
+  const filteredProjects = useMemo(() => {
+    if (activeFilter === 'all') return projects
+    return projects.filter(p => p.categories.includes(activeFilter))
+  }, [activeFilter])
+
+  const activeProject = projects.find(p => p.id === activeProjectId) || null
+
+  const handleExplore = () => {
+    const elem = document.querySelector('.project-universe')
+    elem?.scrollIntoView({ behavior: 'smooth' })
+  }
+
+  const handleOpenChat = () => {
+    window.dispatchEvent(new CustomEvent('openChat', { detail: { question: '¿Cuáles son tus proyectos principales?' } }))
+  }
 
   return (
-    <div className="page">
-      <div className="wrap">
-        <h1 className="sec-title">Proyectos</h1>
-        <p className="sec-subtitle">Construcción de sistemas completos, reales y en producción</p>
-        <div className="sec-div"></div>
+    <div className="projects">
+      <ProjectsHero onExplore={handleExplore} onOpenChat={handleOpenChat} />
 
-        <section className="featured-projects">
-          <h2 className="subsection-title">Proyectos Destacados</h2>
-          <div className="projects-grid">
-            {featured.map(project => (
-              <div key={project.id} className="project-card featured">
-                <div className="project-header">
-                  <h3>{project.name}</h3>
-                  <p className="project-tagline">{project.tagline}</p>
-                </div>
-                <p className="project-description">{project.description}</p>
-                <div className="project-tags">
-                  {project.tags.map(tag => (
-                    <span key={tag} className="tag">{tag}</span>
-                  ))}
-                </div>
-                <button className="project-link">Detalles →</button>
-              </div>
-            ))}
-          </div>
-        </section>
+      <section className="scroll-reveal">
+        <ProjectFilterMatrix active={activeFilter} onFilterChange={setActiveFilter} />
+      </section>
 
-        <section className="other-projects">
-          <h2 className="subsection-title">Otros Proyectos</h2>
-          <div className="projects-list">
-            {others.map(project => (
-              <div key={project.id} className="project-item">
-                <div className="project-item-header">
-                  <h3>{project.name}</h3>
-                  <p className="project-tagline">{project.tagline}</p>
-                </div>
-                <p className="project-description">{project.description}</p>
-                <div className="project-tags">
-                  {project.tags.map(tag => (
-                    <span key={tag} className="tag small">{tag}</span>
-                  ))}
-                </div>
-              </div>
-            ))}
-          </div>
-        </section>
+      <section className="scroll-reveal">
+        <FlagshipProject />
+      </section>
 
-        <section className="project-stats">
-          <h2 className="subsection-title">Impacto</h2>
-          <div className="stats-grid">
-            <div className="stat">
-              <span className="stat-number">8</span>
-              <span className="stat-label">Proyectos</span>
-            </div>
-            <div className="stat">
-              <span className="stat-number">6+</span>
-              <span className="stat-label">En Producción</span>
-            </div>
-            <div className="stat">
-              <span className="stat-number">3</span>
-              <span className="stat-label">Categorías Principales</span>
-            </div>
-            <div className="stat">
-              <span className="stat-number">2</span>
-              <span className="stat-label">Publicaciones IEEE</span>
-            </div>
+      <section className="scroll-reveal project-universe">
+        <ProjectUniverse projects={filteredProjects} activeId={activeProjectId} onSelectProject={setActiveProjectId} />
+      </section>
+
+      <section className="scroll-reveal">
+        <ProjectExplorer project={activeProject} />
+      </section>
+
+      <section className="scroll-reveal">
+        <BuildPatterns />
+      </section>
+
+      <section className="scroll-reveal">
+        <OtherBuilds />
+      </section>
+
+      <section className="scroll-reveal projects-final-cta">
+        <div className="wrap">
+          <h2>Un repositorio muestra código. Un sistema demuestra criterio.</h2>
+          <p>
+            Cada proyecto aquí existe para resolver un problema diferente, pero todos comparten la misma obsesión: entender primero, arquitectar con intención y construir hasta que funcione.
+          </p>
+          <div className="final-cta-buttons">
+            <button
+              onClick={() =>
+                window.dispatchEvent(new CustomEvent('navigate', { detail: { page: 'experiencia' } }))
+              }
+              className="cta-btn"
+            >
+              VER MI EXPERIENCIA
+            </button>
+            <button
+              onClick={() =>
+                window.dispatchEvent(new CustomEvent('navigate', { detail: { page: 'investigacion' } }))
+              }
+              className="cta-btn"
+            >
+              EXPLORAR INVESTIGACIÓN
+            </button>
+            <button onClick={handleOpenChat} className="cta-btn">
+              PREGUNTAR A JAC-IA
+            </button>
           </div>
-        </section>
-      </div>
+        </div>
+      </section>
     </div>
   )
 }

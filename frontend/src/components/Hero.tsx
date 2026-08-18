@@ -1,35 +1,105 @@
 import { useEffect, useState } from 'react'
+import { GlitchHeroName } from './motion/GlitchHeroName'
 import './Hero.css'
 
-export default function Hero() {
-  const [displayText, setDisplayText] = useState('')
-  const fullText = 'JAIME://FIELD_OS'
+interface Props {
+  onOpenChat: () => void
+}
+
+export default function Hero({ onOpenChat }: Props) {
+  const [showDetails, setShowDetails] = useState(false)
 
   useEffect(() => {
-    let index = 0
-    const interval = setInterval(() => {
-      if (index <= fullText.length) {
-        setDisplayText(fullText.slice(0, index))
-        index++
-      } else {
-        clearInterval(interval)
-      }
-    }, 100)
-    return () => clearInterval(interval)
+    setTimeout(() => setShowDetails(true), 1200)
   }, [])
+
+  const tags = ['AI', 'DATA', 'FULL STACK', 'RAG', 'ML', 'ARCHITECTURE', 'AGROTECH']
 
   return (
     <section className="hero">
-      <div className="hero-content">
-        <h1 className="hero-title">{displayText}</h1>
-        <p className="hero-subtitle">Agrotech + Software Engineering | JAC-IA Assistant</p>
-        <div className="hero-cta">
-          <button className="cta-primary">Explore Projects</button>
-          <button className="cta-secondary">Get in Touch</button>
+      <div className="hero-grid">
+        <div className="hero-left">
+          <div className="hero-content">
+            <div className="eyebrow">SYSTEM ONLINE // CALI, COLOMBIA</div>
+
+            <div className="hero-glitch-wrapper">
+              <GlitchHeroName
+                name="JAIME CARDONA"
+                subtitle="AI & DATA ENGINEER"
+              />
+            </div>
+
+            <div className="hero-roles">
+              <span>AI & DATA ENGINEER</span>
+              <span>SOFTWARE ENGINEER</span>
+              <span>APPLIED AI BUILDER</span>
+            </div>
+
+            {showDetails && (
+              <>
+                <p className="hero-phrase">
+                  De la finca al modelo.
+                  <br />
+                  Del problema real al sistema que lo resuelve.
+                </p>
+
+                <p className="hero-description">
+                  Ingeniero de Sistemas que conecta software, datos, inteligencia artificial, arquitectura y conocimiento del campo para convertir problemas reales en productos que pueden operar.
+                </p>
+
+                <div className="hero-tags">
+                  {tags.map(tag => (
+                    <span key={tag} className="tag">
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+
+                <div className="hero-ctas">
+                  <button
+                    className="cta-btn primary"
+                    onClick={() =>
+                      window.dispatchEvent(new CustomEvent('navigate', { detail: { page: 'historia' } }))
+                    }
+                  >
+                    EXPLORAR MI HISTORIA
+                  </button>
+                  <button
+                    className="cta-btn secondary"
+                    onClick={() =>
+                      window.dispatchEvent(new CustomEvent('navigate', { detail: { page: 'proyectos' } }))
+                    }
+                  >
+                    VER SISTEMAS
+                  </button>
+                  <button className="cta-btn secondary" onClick={onOpenChat}>
+                    HABLAR CON JAC-IA
+                  </button>
+                </div>
+              </>
+            )}
+
+            <div className="scroll-indicator">
+              <span>SCROLL TO EXPLORE</span>
+              <div className="scroll-arrow"></div>
+            </div>
+          </div>
         </div>
-      </div>
-      <div className="hero-scanner">
-        <div className="scanner-line"></div>
+
+        <div className="hero-right">
+          <div className="hero-visual">
+            <div className="profile-placeholder">
+              <div className="placeholder-grid"></div>
+              <div className="placeholder-label">JAIME // PROFILE_01</div>
+              <div className="placeholder-meta">
+                <div>CALI / CO</div>
+                <div>23.09</div>
+                <div>SYSTEMS ENGINEER</div>
+                <div>AI / DATA</div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
   )

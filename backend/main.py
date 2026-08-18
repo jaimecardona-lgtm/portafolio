@@ -1,14 +1,19 @@
 import os
 import yaml
 from pathlib import Path
+from typing import Optional, List, Literal
 from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.staticfiles import StaticFiles
-from pydantic import BaseModel
+from pydantic import BaseModel, Field, ConfigDict
 from dotenv import load_dotenv
 import httpx
 
-load_dotenv()
+# Load .env from project root (not from backend directory)
+env_path = Path(__file__).parent.parent / ".env"
+load_dotenv(dotenv_path=env_path, override=True)
+print(f"📁 Loading .env from: {env_path}")
+print(f"✅ .env exists: {env_path.exists()}")
 
 app = FastAPI(title="JAC-IA Portfolio API", version="1.0.0")
 
@@ -87,12 +92,37 @@ INSTRUCCIONES:
     return prompt
 
 # Models
+class ChatHistoryItem(BaseModel):
+    role: Literal["user", "assistant"]
+    content: str = Field(min_length=1, max_length=4000)
+
 class ChatRequest(BaseModel):
-    message: str
+    message: str = Field(min_length=1, max_length=2000)
+    session_id: str = Field(min_length=1, max_length=120)
+    history: List[ChatHistoryItem] = Field(default_factory=list)
+    route: str = Field(default="/", max_length=300)
+    language: Literal["es", "en"] = "es"
+
+class ChatSource(BaseModel):
+    type: str
+    slug: str
+    title: str
+    section: Optional[str] = None
+    route: Optional[str] = None
+
+class ChatAction(BaseModel):
+    label: str
+    route: str
 
 class ChatResponse(BaseModel):
-    response: str
+    model_config = ConfigDict(protected_namespaces=())
+
+    answer: str
     model_used: str
+    fallback_used: bool = False
+    retrieval_used: bool = False
+    sources: List[ChatSource] = Field(default_factory=list)
+    actions: List[ChatAction] = Field(default_factory=list)
 
 # Endpoints
 @app.get("/health")
@@ -106,17 +136,16 @@ async def health_check():
 async def chat_with_jac_ia(request: ChatRequest):
     """
     Conversational endpoint for JAC-IA assistant with OpenRouter integration.
+    Expects: message, session_id, history, route, language.
     """
     user_message = request.message.strip()
+
     if not user_message:
         raise HTTPException(status_code=400, detail="Message cannot be empty")
 
     if not OPENROUTER_API_KEY:
-        # Fallback: return helpful local response
-        return ChatResponse(
-            response="Lo siento, el servicio de IA no está configurado en este momento. Intenta de nuevo más tarde.",
-            model_used="local-fallback"
-        )
+        print("⚠️ OPENROUTER_API_KEY not configured")
+        raise HTTPException(status_code=500, detail="API key not configured. JAC-IA cannot respond.")
 
     headers = {
         "Authorization": f"Bearer {OPENROUTER_API_KEY}",
@@ -131,58 +160,76 @@ async def chat_with_jac_ia(request: ChatRequest):
     ]
 
     system_prompt = build_system_prompt()
-    messages = [
-        {"role": "system", "content": system_prompt},
-        {"role": "user", "content": user_message}
-    ]
+
+    # Include conversation history for context
+    messages = []
+    for item in request.history[-10:]:  # Last 10 messages for context
+        messages.append({
+            "role": item.role,
+            "content": item.content
+        })
+    # Add current message
+    messages.append({
+        "role": "user",
+        "content": user_message
+    })
 
     for model in models_to_try:
         try:
-            async with httpx.AsyncClient() as client:
+            print(f"🤖 Trying model: {model}")
+            async with httpx.AsyncClient(timeout=30.0) as client:
                 response = await client.post(
                     f"{OPENROUTER_BASE_URL}/chat/completions",
                     headers=headers,
                     json={
                         "model": model,
-                        "messages": messages,
+                        "messages": [
+                            {"role": "system", "content": system_prompt},
+                            *messages
+                        ],
                         "max_tokens": 800,
-                        "temperature": 0.7
-                    },
-                    timeout=30.0
+                        "temperature": 0.7,
+                        "top_p": 0.8
+                    }
                 )
+
+                print(f"📡 Response status: {response.status_code}")
 
                 if response.status_code == 200:
                     data = response.json()
                     assistant_message = data["choices"][0]["message"]["content"]
+                    print(f"✅ Success with {model}")
                     return ChatResponse(
-                        response=assistant_message,
-                        model_used=model
+                        answer=assistant_message,
+                        model_used=model,
+                        fallback_used=False,
                     )
                 elif response.status_code == 429:
+                    print(f"⏳ Rate limited on {model}, trying next...")
                     continue
                 else:
+                    print(f"❌ Error {response.status_code} on {model}")
+                    print(f"Response: {response.text}")
                     continue
 
+        except httpx.TimeoutException:
+            print(f"⏱️ Timeout on {model}")
+            continue
         except Exception as e:
-            print(f"Error with model {model}: {e}")
+            print(f"❌ Exception with {model}: {type(e).__name__}: {e}")
             continue
 
-    # All models failed, return local fallback
-    fallback_responses = {
-        "¿quién es jaime": "Jaime Cardona Montero es un Ingeniero de Sistemas graduado de la Universidad de San Buenaventura Cali, especializado en IA, datos y arquitectura de software. Construye sistemas completos que conectan problemas reales con inteligencia artificial.",
-        "agropilot": "Agropilot CM es un ecosistema inteligente para modernizar la gestión agropecuaria colombiana. Integra React frontend, FastAPI backend, PostgreSQL, modelos de ML y asistentes conversacionales con RAG.",
-        "rckt": "En RCKT, Jaime trabaja como AI & Data Engineer, construyendo soluciones AI-first orientadas a producto. Participa en proyectos como Elite Beauty Agent, Voz Estratégica y arquitectura de sistemas escalables.",
-        "ieee": "Jaime tiene dos publicaciones en IEEE CONCAPAN 2025 sobre arquitecturas híbridas de IA para agricultura y dimensiones ambientales de la inteligencia artificial.",
-    }
-
-    for key, value in fallback_responses.items():
-        if key in user_message.lower():
-            return ChatResponse(response=value, model_used="local-fallback")
-
-    return ChatResponse(
-        response="Interesante pregunta. Lamentablemente, el servicio de IA está temporalmente no disponible, pero te recomiendo explorar las secciones de Historia, Proyectos y Experiencia en el portafolio.",
-        model_used="local-fallback"
+    # All models failed
+    print("🚨 All models failed, cannot provide response")
+    raise HTTPException(
+        status_code=503,
+        detail="All LLM models are currently unavailable. Please try again later."
     )
+
+
+def _get_fallback_response(user_message: str) -> str:
+    """Get contextual fallback response when LLM is unavailable."""
+    return f"Lo siento, los modelos de IA no están disponibles en este momento. Tu pregunta fue: '{user_message}'. Por favor, intenta de nuevo en unos momentos."
 
 @app.post("/api/rag")
 async def rag_query(query: dict):
@@ -226,4 +273,5 @@ if os.path.exists("static"):
 
 if __name__ == "__main__":
     import uvicorn
-    uvicorn.run(app, host="0.0.0.0", port=8000)
+    port = int(os.getenv("PORT", "8100"))
+    uvicorn.run(app, host="0.0.0.0", port=port)
