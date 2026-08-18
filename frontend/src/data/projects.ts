@@ -172,7 +172,7 @@ export const projects: Project[] = [
     dataFlow: 'Search → Route → Match → Fare → Reservation → Payment → Confirmation → Rating',
     media: {
       placeholder: 'intermuniconnect-flow',
-      route: '/media/projects/intermuniconnect/intermuniconnect-cover.webp',
+      route: '/media/projects/intermuniconnect/intermuniconnect-cover.jpeg',
       diagram: '/media/diagrams/06-intermuniconnect-arquitectura.png',
     },
   },
