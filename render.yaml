@@ -4,7 +4,7 @@ services:
     runtime: python
     plan: free
     buildCommand: |
-      cd backend && pip install -r requirements.txt
+      cd backend && pip install --only-binary :all: -r requirements.txt
       cd ../frontend && npm install && npm run build
     startCommand: "cd backend && uvicorn main:app --host 0.0.0.0 --port $PORT"
     envVars:
