@@ -1,7 +1,8 @@
 import { useState } from 'react'
 import { Project } from '../../data/projects'
+import SmartMedia from '../media/SmartMedia'
 
-type ExplorerTab = 'overview' | 'flow' | 'stack' | 'decisions' | 'lessons'
+type ExplorerTab = 'overview' | 'flow' | 'stack' | 'architecture' | 'decisions' | 'lessons'
 
 interface Props {
   project: Project | null
@@ -28,7 +29,7 @@ export default function ProjectExplorer({ project }: Props) {
         </div>
 
         <div className="explorer-tabs">
-          {(['overview', 'flow', 'stack', 'decisions', 'lessons'] as ExplorerTab[]).map(tab => (
+          {(['overview', 'flow', 'stack', 'architecture', 'decisions', 'lessons'] as ExplorerTab[]).map(tab => (
             <button
               key={tab}
               className={`explorer-tab ${activeTab === tab ? 'active' : ''}`}
@@ -72,6 +73,38 @@ export default function ProjectExplorer({ project }: Props) {
                   <span key={tech} className="tech-item">{tech}</span>
                 ))}
               </div>
+            </div>
+          )}
+
+          {activeTab === 'architecture' && (
+            <div className="content-architecture">
+              {project.media?.diagram ? (
+                <>
+                  <div className="architecture-diagram">
+                    <SmartMedia
+                      src={project.media.diagram}
+                      alt={`${project.name} architecture`}
+                      width={800}
+                      height={600}
+                      loading="lazy"
+                      aspectRatio="4/3"
+                      objectFit="contain"
+                      mediaType="diagram"
+                    />
+                  </div>
+                  {project.architecture && (
+                    <div className="architecture-description">
+                      <p>{project.architecture}</p>
+                    </div>
+                  )}
+                </>
+              ) : project.architecture ? (
+                <div className="architecture-description">
+                  <p>{project.architecture}</p>
+                </div>
+              ) : (
+                <p className="no-architecture">Arquitectura no disponible</p>
+              )}
             </div>
           )}
 

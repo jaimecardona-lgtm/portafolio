@@ -1,4 +1,5 @@
 import { Project, ownershipColors, ownershipLabels } from '../../data/projects'
+import SmartMedia from '../media/SmartMedia'
 import './ProjectUniverse.css'
 
 interface Props {
@@ -68,7 +69,20 @@ export default function ProjectUniverse({ projects, activeId, onSelectProject }:
                   </div>
 
                   <div className="card-visual">
-                    <div className="visual-placeholder">{project.name}</div>
+                    {project.media?.route ? (
+                      <SmartMedia
+                        src={project.media.route}
+                        alt={`${project.name} cover`}
+                        width={400}
+                        height={300}
+                        loading="lazy"
+                        aspectRatio="4/3"
+                        objectFit="contain"
+                        mediaType="screenshot"
+                      />
+                    ) : (
+                      <div className="visual-placeholder">{project.name}</div>
+                    )}
                   </div>
 
                   <div className="card-content">

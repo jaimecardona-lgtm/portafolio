@@ -33,6 +33,7 @@ export interface Project {
   media: {
     placeholder: string
     route?: string
+    diagram?: string
   }
 }
 
@@ -81,6 +82,7 @@ export const projects: Project[] = [
     media: {
       placeholder: 'agropilot-hud',
       route: '/media/projects/agropilot/agropilot-cover.webp',
+      diagram: '/media/diagrams/02-agropilot-cm-arquitectura.png',
     },
   },
 
@@ -126,6 +128,7 @@ export const projects: Project[] = [
     media: {
       placeholder: 'elite-beauty-channels',
       route: '/media/projects/elite-beauty/elite-beauty-cover.webp',
+      diagram: '/media/diagrams/04-elite-beauty-agent-arquitectura.png',
     },
   },
 
@@ -170,6 +173,7 @@ export const projects: Project[] = [
     media: {
       placeholder: 'intermuniconnect-flow',
       route: '/media/projects/intermuniconnect/intermuniconnect-cover.webp',
+      diagram: '/media/diagrams/06-intermuniconnect-arquitectura.png',
     },
   },
 
@@ -213,6 +217,7 @@ export const projects: Project[] = [
     media: {
       placeholder: 'facturaops-document',
       route: '/media/projects/facturaops/facturaops-cover.webp',
+      diagram: '/media/diagrams/05-facturaops-arquitectura.png',
     },
   },
 
@@ -256,6 +261,7 @@ export const projects: Project[] = [
     media: {
       placeholder: 'bertolli-landing',
       route: '/media/projects/bertolli/bertolli-cover.webp',
+      diagram: '/media/diagrams/03-bertolli-pro-900-arquitectura.png',
     },
   },
 
@@ -298,6 +304,7 @@ export const projects: Project[] = [
     media: {
       placeholder: 'voz-estrategica-analytics',
       route: '/media/projects/voz-estrategica/voz-estrategica-cover.webp',
+      diagram: '/media/diagrams/07-voz-estrategica-arquitectura.png',
     },
   },
 
@@ -339,6 +346,7 @@ export const projects: Project[] = [
     media: {
       placeholder: 'agrodiversity-research',
       route: '/media/projects/agrodiversity/agrodiversity-cover.webp',
+      diagram: '/media/diagrams/01-agrodiversity-arquitectura.png',
     },
   },
 ]

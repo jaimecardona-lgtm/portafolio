@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import { GlitchHeroName } from './motion/GlitchHeroName'
+import SmartMedia from './media/SmartMedia'
 import './Hero.css'
 
 interface Props {
@@ -88,16 +89,17 @@ export default function Hero({ onOpenChat }: Props) {
 
         <div className="hero-right">
           <div className="hero-visual">
-            <div className="profile-placeholder">
-              <div className="placeholder-grid"></div>
-              <div className="placeholder-label">JAIME // PROFILE_01</div>
-              <div className="placeholder-meta">
-                <div>CALI / CO</div>
-                <div>23.09</div>
-                <div>SYSTEMS ENGINEER</div>
-                <div>AI / DATA</div>
-              </div>
-            </div>
+            <SmartMedia
+              src="/media/profile/perfil.jpeg"
+              alt="Jaime Cardona - Perfil"
+              width={300}
+              height={400}
+              loading="eager"
+              fetchPriority="high"
+              aspectRatio="3/4"
+              objectFit="contain"
+              mediaType="photo"
+            />
           </div>
         </div>
       </div>

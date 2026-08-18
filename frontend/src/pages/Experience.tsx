@@ -10,6 +10,8 @@ import {
   experienceQuestions,
 } from '../data/experience'
 import ExperienceHero from '../components/experience/ExperienceHero'
+import CompanyGallery from '../components/experience/CompanyGallery'
+import ImageShowcase from '../components/media/ImageShowcase'
 import CareerTimeline from '../components/experience/CareerTimeline'
 import MissionDossier from '../components/experience/MissionDossier'
 import EngineeringInReality from '../components/experience/EngineeringInReality'
@@ -57,6 +59,34 @@ export default function Experience() {
       <div className="wrap">
         <section className="scroll-reveal">
           <ExperienceHero />
+        </section>
+
+        <section className="scroll-reveal">
+          <CompanyGallery />
+        </section>
+
+        <section className="scroll-reveal">
+          <ImageShowcase
+            title="FORMACIÓN ACADÉMICA"
+            subtitle="Universidad de San Buenaventura Cali"
+            variant="carousel"
+            images={[
+              {
+                id: 'education1',
+                src: '/media/education/clase.jpg',
+                alt: 'Educación 1',
+                title: 'Ingeniería de Sistemas',
+                description: 'Cimentación técnica en arquitectura, algoritmos y principios de sistemas',
+              },
+              {
+                id: 'education2',
+                src: '/media/education/WhatsApp Image 2026-08-17 at 9.40.26 PM.jpeg',
+                alt: 'Educación 2',
+                title: 'Aprendizaje Continuo',
+                description: 'Formación permanente en nuevas tecnologías y metodologías',
+              },
+            ]}
+          />
         </section>
 
         <section className="scroll-reveal">

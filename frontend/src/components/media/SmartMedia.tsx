@@ -11,6 +11,7 @@ interface SmartMediaProps {
   loading?: 'lazy' | 'eager'
   fetchPriority?: 'high' | 'low' | 'auto'
   objectPosition?: string
+  objectFit?: 'cover' | 'contain' | 'fill' | 'scale-down'
   aspectRatio?: string
   status?: 'available' | 'missing' | 'restricted' | 'planned'
   entitySlug?: string
@@ -28,6 +29,7 @@ export default function SmartMedia({
   loading = 'lazy',
   fetchPriority = 'auto',
   objectPosition = 'center',
+  objectFit = 'contain',
   aspectRatio = '16/9',
   status = 'available',
   entitySlug,
@@ -75,7 +77,7 @@ export default function SmartMedia({
           height={height}
           loading={loading}
           fetchPriority={fetchPriority}
-          style={{ objectPosition }}
+          style={{ objectPosition, objectFit }}
           onError={handleImageError}
           onLoad={handleImageLoad}
           className={`smart-media-img ${isLoading ? 'loading' : 'loaded'}`}

@@ -4,6 +4,8 @@ import './Home.css'
 import Hero from '../components/Hero'
 import StatusStrip from '../components/home/StatusStrip'
 import OriginNode from '../components/home/OriginNode'
+import FarmGallery from '../components/home/FarmGallery'
+import HackathonsGallery from '../components/home/HackathonsGallery'
 import WorldGatewayGrid from '../components/home/WorldGatewayGrid'
 import FeaturedSystems from '../components/home/FeaturedSystems'
 import CareerSignal from '../components/home/CareerSignal'
@@ -50,6 +52,14 @@ export default function Home() {
 
       <section className="scroll-reveal">
         <OriginNode />
+      </section>
+
+      <section className="scroll-reveal">
+        <FarmGallery />
+      </section>
+
+      <section className="scroll-reveal">
+        <HackathonsGallery />
       </section>
 
       <section className="scroll-reveal">
