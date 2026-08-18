@@ -1,0 +1,75 @@
+{
+  "experiences": [
+    {
+      "id": "alignerr-current",
+      "company": "Alignerr",
+      "position": "AI Model Response Evaluator / Coding Evaluation Specialist",
+      "type": "Freelance",
+      "modality": "Remote",
+      "location": "Cali, Valle del Cauca, Colombia",
+      "start_date": "2026-06",
+      "end_date": null,
+      "current": true,
+      "description": "Evaluación de respuestas generadas por modelos de inteligencia artificial para tareas\ntécnicas basadas en repositorios de código. Revisión crítica de prompts, transcripts,\ncomandos ejecutados, archivos modificados y calidad final de las soluciones propuestas.\n",
+      "responsibilities": [
+        "Comparación técnica de respuestas de múltiples modelos de IA",
+        "Revisión exhaustiva de código y cambios propuestos",
+        "Evaluación de correctitud, mantenibilidad y completitud",
+        "Detección de sobreingeniería y fallas de verificación",
+        "Redacción de justificaciones basadas en evidencia",
+        "Evaluación de agentes de código"
+      ]
+    },
+    {
+      "id": "rckt-current",
+      "company": "RCKT",
+      "position": "AI & Data Engineer",
+      "type": "Part-time",
+      "modality": "Remote",
+      "location": "Colombia",
+      "start_date": "2026-06",
+      "end_date": null,
+      "current": true,
+      "description": "Convierte necesidades de negocio en soluciones técnicas entregables mediante backend,\nflujos de datos, automatización y agentes de inteligencia artificial.\n",
+      "key_projects": [
+        "Elite Beauty Agent",
+        "Voz Estratégica",
+        "SofiaProject"
+      ]
+    },
+    {
+      "id": "opportunityhound",
+      "company": "Opportunity Hound / GovBidAI",
+      "position": "Data Analyst & Developer",
+      "type": "Full-time",
+      "modality": "Remote",
+      "location": "Cali, Valle del Cauca, Colombia",
+      "start_date": "2025-09",
+      "end_date": "2026-03",
+      "description": "Analista de datos y desarrollador con enfoque en Python, backend e integración\nde inteligencia artificial para la plataforma OppyHound/GovBidAI.\n",
+      "responsibilities": [
+        "Ingeniería y análisis de datos",
+        "Servicios backend Python",
+        "Integración de modelos IA/ML",
+        "Elasticsearch indexación y búsqueda",
+        "Testing con Pytest"
+      ]
+    },
+    {
+      "id": "dian",
+      "company": "Dirección de Impuestos y Aduanas Nacionales (DIAN)",
+      "position": "University Intern - Data Analyst & Full-Stack Developer",
+      "type": "Internship",
+      "modality": "On-site",
+      "location": "Cali, Valle del Cauca, Colombia",
+      "start_date": "2025-02",
+      "end_date": "2025-09",
+      "description": "Practicante universitario desarrollando soluciones tecnológicas de valor\npara la entidad pública.\n",
+      "main_systems": [
+        "Sistema de Inventario y Préstamo de Equipos",
+        "Plataforma de Convenios Interinstitucionales",
+        "Sistema de Gestión de Roles"
+      ]
+    }
+  ]
+}

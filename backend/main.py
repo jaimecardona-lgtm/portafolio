@@ -1,5 +1,5 @@
 import os
-import yaml
+import json
 from pathlib import Path
 from typing import Optional, List, Literal
 from fastapi import FastAPI, HTTPException
@@ -30,21 +30,21 @@ app.add_middleware(
 OPENROUTER_API_KEY = os.getenv("OPENROUTER_API_KEY")
 OPENROUTER_BASE_URL = "https://openrouter.ai/api/v1"
 
-# Load content YAML files
-def load_yaml(filename: str):
-    filepath = Path(__file__).parent.parent / "content" / f"{filename}.yml"
+# Load content JSON files
+def load_json(filename: str):
+    filepath = Path(__file__).parent.parent / "content" / f"{filename}.json"
     try:
         with open(filepath, 'r', encoding='utf-8') as f:
-            return yaml.safe_load(f)
+            return json.load(f)
     except Exception as e:
         print(f"Error loading {filename}: {e}")
         return {}
 
-PROFILE = load_yaml("profile")
-EXPERIENCE = load_yaml("experience")
-PROJECTS = load_yaml("projects")
-STORY = load_yaml("story")
-PUBLICATIONS = load_yaml("publications")
+PROFILE = load_json("profile")
+EXPERIENCE = load_json("experience")
+PROJECTS = load_json("projects")
+STORY = load_json("story")
+PUBLICATIONS = load_json("publications")
 
 def build_system_prompt():
     """Build system prompt with Jaime's information."""

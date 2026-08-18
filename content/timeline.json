@@ -1,0 +1,84 @@
+{
+  "timeline": [
+    {
+      "year": 2024,
+      "events": [
+        {
+          "title": "Launched Agropilot CM",
+          "description": "Comprehensive farm management system enters production",
+          "month": "June",
+          "icon": "🌾"
+        },
+        {
+          "title": "JAC-IA v1.0 Release",
+          "description": "Agricultural AI assistant with OpenRouter integration",
+          "month": "August",
+          "icon": "🤖"
+        },
+        {
+          "title": "Portfolio Website Live",
+          "description": "Interactive portfolio showcasing agrotech and software work",
+          "month": "August",
+          "icon": "💻"
+        }
+      ]
+    },
+    {
+      "year": 2023,
+      "events": [
+        {
+          "title": "Started Independent Development",
+          "description": "Transitioned to building own products and consulting",
+          "month": "January",
+          "icon": "🚀"
+        },
+        {
+          "title": "Multiple App Launches",
+          "description": "Released Elite Beauty, FacturaOps, and other platforms",
+          "month": "Throughout",
+          "icon": "📱"
+        },
+        {
+          "title": "RAG System Implementation",
+          "description": "Integrated pgvector and RAG for knowledge-driven applications",
+          "month": "November",
+          "icon": "🔍"
+        }
+      ]
+    },
+    {
+      "year": 2022,
+      "events": [
+        {
+          "title": "Professional Development Journey",
+          "description": "Gained experience across multiple tech stacks and domains",
+          "month": "Throughout",
+          "icon": "📈"
+        },
+        {
+          "title": "First Production Deployments",
+          "description": "Deployed multiple applications to cloud infrastructure",
+          "month": "Throughout",
+          "icon": "☁️"
+        }
+      ]
+    },
+    {
+      "year": 2021,
+      "events": [
+        {
+          "title": "Entered Software Development",
+          "description": "Started career as junior developer",
+          "month": "June",
+          "icon": "🎓"
+        },
+        {
+          "title": "Learned Full-Stack Fundamentals",
+          "description": "Mastered React, Node.js, and database design",
+          "month": "Throughout",
+          "icon": "📚"
+        }
+      ]
+    }
+  ]
+}

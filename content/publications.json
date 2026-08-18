@@ -1,0 +1,105 @@
+{
+  "publications": [
+    {
+      "id": "hybrid-ai-architecture",
+      "title": "Hybrid AI Architecture for Agricultural Diversification- Deep Learning and Expert Systems Integration in the AgroDiversity Platform",
+      "authors": [
+        "Jaime Andrés Cardona Montero",
+        "Additional authors"
+      ],
+      "conference": "IEEE CONCAPAN XLIII 2025",
+      "location": "San Salvador, El Salvador",
+      "date": "2025",
+      "doi": "10.1109/CONCAPAN66820.2025.11512437",
+      "publication_year": 2025,
+      "status": "Published",
+      "indexed": "IEEE Xplore",
+      "abstract": "Exploración de arquitecturas híbridas que integran aprendizaje profundo con\nsistemas expertos para diversificación agrícola, usando la plataforma AgroDiversity\ncomo caso de uso.\n",
+      "key_topics": [
+        "Deep Learning",
+        "Expert Systems",
+        "Agricultural AI",
+        "Hybrid Architectures",
+        "Agricultural Diversification",
+        "Machine Learning Applications"
+      ],
+      "connection_to_work": "Directamente relacionado con Agropilot CM y el módulo de sistemas silvopastorales.\nDemuestra capacidad de investigación aplicada y publicación en conferencias indexadas.\n",
+      "link_doi": "https://doi.org/10.1109/CONCAPAN66820.2025.11512437"
+    },
+    {
+      "id": "environmental-dimensions-ai",
+      "title": "The Environmental Dimensions of Artificial Intelligence- A Multifaceted Challenge",
+      "authors": [
+        "Jaime Andrés Cardona Montero",
+        "Additional authors"
+      ],
+      "conference": "IEEE CONCAPAN XLIII 2025",
+      "location": "San Salvador, El Salvador",
+      "date": "2025",
+      "doi": "10.1109/CONCAPAN66820.2025.11512472",
+      "publication_year": 2025,
+      "status": "Published",
+      "indexed": "IEEE Xplore",
+      "abstract": "Análisis multidimensional de los impactos ambientales de la inteligencia artificial,\nconsiderando consumo energético, emisiones de carbono, residuos electrónicos y\nsostenibilidad en sistemas de IA a escala.\n",
+      "key_topics": [
+        "Environmental Impact",
+        "AI Sustainability",
+        "Carbon Footprint",
+        "Green AI",
+        "Responsible AI",
+        "Environmental Ethics"
+      ],
+      "connection_to_work": "Reflexión sobre sostenibilidad e impacto ambiental de la IA, relevante a la\nconstrucción responsable de sistemas inteligentes.\n",
+      "link_doi": "https://doi.org/10.1109/CONCAPAN66820.2025.11512472"
+    }
+  ],
+  "research_interests": [
+    "Agricultural Intelligence & Automation",
+    "Sustainable AI",
+    "Hybrid AI Systems",
+    "Data Engineering at Scale",
+    "Responsible AI & Ethics",
+    "Full-Stack Intelligence",
+    "RAG & Knowledge Systems",
+    "Product-Oriented Research"
+  ],
+  "academic_contributions": [
+    "IEEE CONCAPAN 2025 publications",
+    "University of San Buenaventura Cali research projects",
+    "Open source contributions",
+    "Technical documentation and guides"
+  ],
+  "future_research_directions": [
+    "Computer Vision for Agricultural Monitoring",
+    "Predictive Models for Livestock Management",
+    "Environmental Impact Measurement",
+    "Federated Learning in Agriculture",
+    "Edge AI for Rural Applications",
+    "Responsible AI Frameworks"
+  ],
+  "academic_roles": [
+    {
+      "id": "concapan-2026-tpc",
+      "role": "Technical Program Committee Reviewer",
+      "organization": "IEEE CONCAPAN 2026",
+      "event": "IEEE 44th Central America and Panama Convention (CONCAPAN XLIV)",
+      "year": 2026,
+      "status": "Active",
+      "topics": [
+        "Artificial Intelligence",
+        "Agricultural Technology",
+        "Data Engineering",
+        "Hybrid Systems",
+        "Sustainable Computing"
+      ],
+      "responsibilities": [
+        "Review 3-4 submissions within areas of expertise",
+        "Provide constructive, substantive feedback",
+        "Contribute to technical program quality"
+      ],
+      "announcement_date": "2026-08-16",
+      "acceptance_url": "https://edas.info/Tyn.php?tpc=1001940169",
+      "description": "Seleccionado como revisor TPC (Technical Program Committee) para CONCAPAN 2026.\nResponsable de revisar y evaluar trabajos de investigación en áreas de inteligencia artificial,\ntecnología agrícola y sistemas de datos. Reconocimiento de la contribución académica y técnica\nen la región de Centroamérica y Panamá.\n"
+    }
+  ]
+}

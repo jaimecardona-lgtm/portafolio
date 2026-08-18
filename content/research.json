@@ -1,0 +1,69 @@
+{
+  "research": [
+    {
+      "title": "Precision Agriculture with AI: A Deep Dive into ML Applications",
+      "date": "2024",
+      "status": "Published",
+      "abstract": "Exploring machine learning applications in modern farming, from crop yield prediction\nto pest management. This research examines how AI can optimize agricultural outcomes\nwhile promoting sustainability.\n",
+      "tags": [
+        "Machine Learning",
+        "Agriculture",
+        "AI/ML",
+        "Sustainability"
+      ],
+      "link": "#research"
+    },
+    {
+      "title": "Conversational AI for Agricultural Consulting",
+      "date": "2024",
+      "status": "In Progress",
+      "abstract": "Investigating the effectiveness of large language models for providing agricultural\nconsulting services. Includes case studies on JAC-IA deployment in real farming scenarios.\n",
+      "tags": [
+        "LLM",
+        "NLP",
+        "Agriculture",
+        "Human-AI Interaction"
+      ],
+      "link": "#research"
+    },
+    {
+      "title": "RAG Systems for Specialized Knowledge Domains",
+      "date": "2024",
+      "status": "In Progress",
+      "abstract": "Building and evaluating Retrieval-Augmented Generation systems for domain-specific\nknowledge retrieval, with applications in agricultural intelligence.\n",
+      "tags": [
+        "RAG",
+        "Knowledge Management",
+        "Information Retrieval",
+        "LLM"
+      ],
+      "link": "#research"
+    },
+    {
+      "title": "Sustainable Tech Stack for Farm Management Systems",
+      "date": "2023",
+      "status": "Published",
+      "abstract": "Analysis of modern development frameworks and their application to building\nsustainable, scalable farm management systems.\n",
+      "tags": [
+        "Software Architecture",
+        "Full-Stack Development",
+        "Agriculture",
+        "Scalability"
+      ],
+      "link": "#research"
+    },
+    {
+      "title": "Data Privacy in Agricultural Intelligence Systems",
+      "date": "2023",
+      "status": "In Progress",
+      "abstract": "Examining privacy-preserving approaches for agricultural data collection and AI\nanalysis, with focus on farmer data rights and ethical AI practices.\n",
+      "tags": [
+        "Privacy",
+        "Ethics",
+        "Data Protection",
+        "Agriculture"
+      ],
+      "link": "#research"
+    }
+  ]
+}

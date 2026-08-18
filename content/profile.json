@@ -1,0 +1,164 @@
+{
+  "name": "Jaime Andrés Cardona Montero",
+  "full_name": "Jaime Andrés Cardona Montero",
+  "professional_name": "Jaime Cardona Montero",
+  "birth_date": "2002-09-23",
+  "age_calculated": true,
+  "title": "AI & Data Engineer · Software Engineer · Full-Stack Developer · Applied AI Builder · Systems Architect\n",
+  "email": "jaime.cardona@rckt.es",
+  "phone": "+57 XXX XXX XXXX",
+  "bio": "Ingeniero de Sistemas graduado de la Universidad de San Buenaventura Cali.\n\nConstruyo productos, agentes y sistemas inteligentes que conectan problemas reales\ncon software, datos e inteligencia artificial.\n\nCampo, arquitectura, backend, producto, matemáticas, RAG, modelos predictivos,\nautomatización y sistemas preparados para operar.\n",
+  "brand_statement": "De la finca al modelo. Del problema real al sistema que lo resuelve.\n",
+  "core_message": "No conecto herramientas por moda.\nDiseño sistemas que entienden el problema, operan con datos y producen decisiones.\n",
+  "narrative": "Antes de construir sistemas digitales, aprendí a observar sistemas vivos:\nproducción, animales, costos, ciclos, recursos, errores y decisiones con\nconsecuencias reales. Esa forma de pensar se convirtió en Ingeniería de Sistemas,\ninteligencia artificial, matemáticas aplicadas, arquitectura de software y\nproductos completos.\n",
+  "education": {
+    "degree": "Ingeniero de Sistemas",
+    "institution": "Universidad de San Buenaventura Cali",
+    "graduation_date": "2026-03-25",
+    "status": "GRADUATED"
+  },
+  "location": "Cali, Valle del Cauca, Colombia",
+  "timezone": "America/Bogota",
+  "country": "Colombia",
+  "social": [
+    {
+      "platform": "github",
+      "url": "https://github.com/ja23cardona1406",
+      "label": "GitHub"
+    },
+    {
+      "platform": "linkedin",
+      "url": "https://linkedin.com/in/jaime-cardona",
+      "label": "LinkedIn"
+    },
+    {
+      "platform": "email",
+      "url": "mailto:jaime.cardona@rckt.es",
+      "label": "Email"
+    }
+  ],
+  "contact": {
+    "email_primary": "jaime.cardona@rckt.es",
+    "email_alt": null,
+    "linkedin": "https://linkedin.com/in/jaime-cardona",
+    "github": "https://github.com/ja23cardona1406",
+    "portfolio": "https://jaime-cardona.dev"
+  },
+  "positioning": [
+    "AI Engineer",
+    "Data Engineer",
+    "Software Engineer",
+    "Full-Stack Developer",
+    "Applied AI Builder",
+    "Systems Architect",
+    "Product Thinker",
+    "Technical Leader"
+  ],
+  "skills_categories": {
+    "frontend": [
+      "React",
+      "TypeScript",
+      "JavaScript",
+      "Ionic",
+      "HTML/CSS",
+      "Tailwind CSS",
+      "Redux Toolkit",
+      "Vite",
+      "Responsive Design",
+      "Accessibility"
+    ],
+    "backend": [
+      "FastAPI",
+      "Node.js",
+      "Express",
+      "Python",
+      "C#/.NET",
+      "Java",
+      "REST APIs",
+      "Authentication & Authorization",
+      "Microservices"
+    ],
+    "databases": [
+      "PostgreSQL",
+      "Supabase",
+      "MongoDB",
+      "Prisma",
+      "SQL Server",
+      "SQLite",
+      "Row Level Security",
+      "Multi-tenancy",
+      "pgvector"
+    ],
+    "ai_ml": [
+      "RAG (Retrieval Augmented Generation)",
+      "Embeddings & Vector Search",
+      "LLM Integration",
+      "OpenRouter",
+      "Anthropic Claude",
+      "Model Routing & Fallback",
+      "Ollama",
+      "ChromaDB",
+      "Prompt Engineering",
+      "Agent Architecture",
+      "LLM-as-a-Judge",
+      "Machine Learning Fundamentals"
+    ],
+    "data_analytics": [
+      "Python Data Science",
+      "Pandas/NumPy",
+      "Scikit-Learn",
+      "TensorFlow/Keras",
+      "Statistical Analysis",
+      "Predictive Modeling",
+      "Regression & Classification",
+      "Anomaly Detection",
+      "Time Series Analysis",
+      "Data Engineering"
+    ],
+    "infrastructure": [
+      "Docker",
+      "Render",
+      "AWS Services",
+      "Deployment Pipelines",
+      "CI/CD",
+      "Networking",
+      "MikroTik",
+      "Security & Access Control"
+    ],
+    "testing_qa": [
+      "Pytest",
+      "Test Coverage",
+      "Code Review",
+      "Quality Assurance",
+      "Software Quality Evaluation",
+      "AI Model Evaluation"
+    ],
+    "product_leadership": [
+      "Architecture & Design",
+      "Team Organization",
+      "Technical Leadership",
+      "Documentation",
+      "Problem Solving",
+      "Solution Design",
+      "Decision Making",
+      "Product Thinking"
+    ]
+  },
+  "personality": [
+    "Strong & Contundent",
+    "Technical & Precise",
+    "Ambitious & Strategic",
+    "Human & Authentic",
+    "Field-connected",
+    "Results-oriented",
+    "Full-stack thinker",
+    "Initiative-driven"
+  ],
+  "privacy_config": {
+    "show_exact_birth_date": false,
+    "show_birth_year_in_chat": false,
+    "show_credentials": true,
+    "show_email": true,
+    "show_phone": false
+  }
+}
