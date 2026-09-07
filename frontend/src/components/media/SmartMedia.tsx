@@ -76,7 +76,7 @@ export default function SmartMedia({
           width={width}
           height={height}
           loading={loading}
-          fetchpriority={fetchPriority}
+          fetchPriority={fetchPriority}
           style={{ objectPosition, objectFit }}
           onError={handleImageError}
           onLoad={handleImageLoad}
