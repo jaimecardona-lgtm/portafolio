@@ -11,17 +11,31 @@ export default function Hero({ onOpenChat }: Props) {
   const [showDetails, setShowDetails] = useState(false)
 
   useEffect(() => {
-    setTimeout(() => setShowDetails(true), 1200)
+    const timer = window.setTimeout(() => {
+      setShowDetails(true)
+    }, 1200)
+
+    return () => window.clearTimeout(timer)
   }, [])
 
-  const tags = ['AI', 'DATA', 'FULL STACK', 'RAG', 'ML', 'ARCHITECTURE', 'AGROTECH']
+  const tags = [
+    'AI',
+    'DATA',
+    'FULL STACK',
+    'RAG',
+    'ML',
+    'ARCHITECTURE',
+    'AGROTECH',
+  ]
 
   return (
     <section className="hero">
       <div className="hero-grid">
         <div className="hero-left">
           <div className="hero-content">
-            <div className="eyebrow">SYSTEM ONLINE // CALI, COLOMBIA</div>
+            <div className="eyebrow">
+              SYSTEM ONLINE // CALI, COLOMBIA
+            </div>
 
             <div className="hero-glitch-wrapper">
               <GlitchHeroName
@@ -45,11 +59,14 @@ export default function Hero({ onOpenChat }: Props) {
                 </p>
 
                 <p className="hero-description">
-                  Ingeniero de Sistemas que conecta software, datos, inteligencia artificial, arquitectura y conocimiento del campo para convertir problemas reales en productos que pueden operar.
+                  Ingeniero de Sistemas que conecta software, datos,
+                  inteligencia artificial, arquitectura y conocimiento del
+                  campo para convertir problemas reales en productos que
+                  pueden operar.
                 </p>
 
                 <div className="hero-tags">
-                  {tags.map(tag => (
+                  {tags.map((tag) => (
                     <span key={tag} className="tag">
                       {tag}
                     </span>
@@ -60,22 +77,44 @@ export default function Hero({ onOpenChat }: Props) {
                   <button
                     className="cta-btn primary"
                     onClick={() =>
-                      window.dispatchEvent(new CustomEvent('navigate', { detail: { page: 'historia' } }))
+                      window.dispatchEvent(
+                        new CustomEvent('navigate', {
+                          detail: { page: 'historia' },
+                        })
+                      )
                     }
                   >
                     EXPLORAR MI HISTORIA
                   </button>
+
                   <button
                     className="cta-btn secondary"
                     onClick={() =>
-                      window.dispatchEvent(new CustomEvent('navigate', { detail: { page: 'proyectos' } }))
+                      window.dispatchEvent(
+                        new CustomEvent('navigate', {
+                          detail: { page: 'proyectos' },
+                        })
+                      )
                     }
                   >
                     VER SISTEMAS
                   </button>
-                  <button className="cta-btn secondary" onClick={onOpenChat}>
+
+                  <button
+                    className="cta-btn secondary"
+                    onClick={onOpenChat}
+                  >
                     HABLAR CON JAC-IA
                   </button>
+
+                  <a
+                    href="/media/profile/Jaime_Andres_Cardona_Montero_CV_2026_actualizada.pdf"
+                    download="Jaime_Andres_Cardona_CV.pdf"
+                    className="cta-btn secondary"
+                    aria-label="Descargar hoja de vida de Jaime Cardona en PDF"
+                  >
+                    DESCARGAR CV
+                  </a>
                 </div>
               </>
             )}
