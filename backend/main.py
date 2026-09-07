@@ -267,6 +267,10 @@ async def get_experience():
     experience = EXPERIENCE or {}
     return {"experiences": experience.get("experiences", [])}
 
+# Serve media files
+if os.path.exists("../frontend/public/media"):
+    app.mount("/media", StaticFiles(directory="../frontend/public/media"), name="media")
+
 # Serve static files (built frontend)
 if os.path.exists("static"):
     app.mount("/", StaticFiles(directory="static", html=True), name="static")
